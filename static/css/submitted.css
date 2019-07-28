@@ -1,0 +1,16 @@
+#main, div.row {
+height:100%;
+}
+
+div.main{
+height:95%;
+}
+
+div>h2{
+text-align: center;
+}
+
+div.navigation{
+text-align: center;
+}
+

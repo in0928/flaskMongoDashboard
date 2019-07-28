@@ -1,0 +1,21 @@
+div.col-lg-6 {
+   max-width: 100%;
+}
+
+div.col-lg-9.col-md-8 {
+    max-width: 100%;
+}
+
+thead.thead-inverse{
+    background-color: antiquewhite;
+}
+
+/*overwrite the row color*/
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+

@@ -93,7 +93,8 @@ Dashboard
     <!--                </div>-->
     <!--            </div>-->
 
-    <hr>
+<!--    <hr>-->
+    <br>
     <div class="col-lg-6">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
@@ -101,13 +102,13 @@ Dashboard
                 <a class="nav-link active" href="#people" role="tab" data-toggle="tab">People</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#profile1" role="tab" data-toggle="tab">Profile</a>
+                <a class="nav-link" href="#ba" role="tab" data-toggle="tab">BA</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#messages1" role="tab" data-toggle="tab">Messages</a>
+                <a class="nav-link" href="#my-dreams" role="tab" data-toggle="tab">My Dreams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#settings1" role="tab" data-toggle="tab">Settings</a>
+                <a class="nav-link" href="#restaurants-bars" role="tab" data-toggle="tab">Restaurants & Bars</a>
             </li>
         </ul>
 
@@ -161,19 +162,19 @@ Dashboard
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="profile1">
+            <div role="tabpanel" class="tab-pane" id="ba">
                 <h4>Pro</h4>
                 <p>
                     2. Tabs are helpful to hide or collapse some addtional content.
                 </p>
             </div>
-            <div role="tabpanel" class="tab-pane" id="messages1">
+            <div role="tabpanel" class="tab-pane" id="my-dreams">
                 <h4>Messages</h4>
                 <p>
                     3. You can really put whatever you want into the tab pane.
                 </p>
             </div>
-            <div role="tabpanel" class="tab-pane" id="settings1">
+            <div role="tabpanel" class="tab-pane" id="restaurants-bars">
                 <h4>Settings</h4>
                 <p>
                     4. Some of the Bootstrap 3.x components like well and panel have been dropped for the new card
@@ -182,6 +183,34 @@ Dashboard
             </div>
         </div>
     </div>
+
+<!--    Data from COM-->
+    <div class="col-lg-9 col-md-8">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th></th>
+                                <th>内容</th>
+                                <th>時間</th>
+                                <th>SP</th>
+                                <th>MC/AC</th>
+                                <th>会場</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>8.3</td>
+                                <td>{{ row[0] }}</td>
+                                <td>Other</td>
+                                <td>Just Met</td>
+                                <td>long string should be herelong string should be here</td>
+                                <td>some tags</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
 
     <a id="features"></a>
     <hr>

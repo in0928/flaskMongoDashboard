@@ -11,9 +11,8 @@ Dashboard
 {% block body %}
 <div class="col main pt-5 mt-3">
     <h1 class="display-4 d-none d-sm-block">
-        Bootstrap 4 Dashboard
+        My Dashboard
     </h1>
-    <p class="lead d-none d-sm-block">Plus off-canvas sidebar, based on Bootstrap v4</p>
 
     <div class="alert alert-warning fade collapse" role="alert" id="myAlert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -147,14 +146,16 @@ Dashboard
                                 <td>responsive</td>
                                 <td>Tag1, tag2, tag3, tag4, tag5, tag6, more tags, more and more, just for testing</td>
                             </tr>
+                            {% for person in people_list %}
                             <tr>
-                                <td>Name3</td>
-                                <td>31</td>
-                                <td>umm</td>
-                                <td>BPR</td>
-                                <td>responsive</td>
-                                <td>Tag just for testing</td>
+                                <td>{{ person["full-name"] }}</td>
+                                <td>{{ person["age"] }}</td>
+                                <td>{{ person["gender"] }}</td>
+                                <td>{{ person["status"] }}</td>
+                                <td>{{ person["description"] }}</td>
+                                <td>{{ person["tags"] }}</td>
                             </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>

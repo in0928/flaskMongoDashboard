@@ -15,7 +15,8 @@ tracker = []
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    people_list = people_test.find()
+    return render_template("home.html", people_list=people_list)
 
 
 @app.route("/form")

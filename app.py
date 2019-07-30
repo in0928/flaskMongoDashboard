@@ -11,6 +11,7 @@ heading = "Form submission with Flask and MongoDB"
 client = MongoClient("mongodb://127.0.0.1:27017")  # host uri
 db = client.test  # Select the database
 people_test = db.peopleTest  # Select the collection name
+schedule_test = db.scheduleTest
 
 # use for COM schedule
 date_list = list(range(0, 32))
@@ -56,16 +57,29 @@ def submitted():
 
 @app.route("/schedule")
 def schedule():
-    new_session = ss.login()
-    row_data = ss.get_row_data(new_session)
-    # Aug now
-    # currentMonth = datetime.now().strftime("%m")
-    # month = currentMonth.replace("0", "")
-    month = "8"
-    all_dates = []
-    for date in date_list[1:]:
-        all_dates.append(month+" / "+str(date))
-    return render_template("schedule.html", row_data=row_data, all_dates=all_dates)
+    month_date = ["8."]*31
+    for i in range(31):
+        date = str(i+1)
+        month_date[i] = month_date[i]+date
+
+    day_list = []
+    for day in month_date:
+        aug = schedule_test.find({"date": day})
+        print(aug[0])
+        for item in aug:
+            content = item["content"]
+            date = item["date"]
+            union_name = item["union_name"]
+            time = item["time"]
+            SP = item["SP"]
+            MC_AC = item["MC_AC"]
+            venue = item["venue"]
+            if content == "":  # not show groups which has nothing planned on that date
+                continue
+            else:
+                new_entry = [date,union_name,content,time,SP,MC_AC,venue]
+                day_list.append(new_entry)
+    return render_template("schedule.html", day_list=day_list)
 
 
 if __name__ == "__main__":

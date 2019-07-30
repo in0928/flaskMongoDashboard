@@ -26,16 +26,15 @@ Monthly Schedule From COM
             </tr>
             </thead>
             <tbody>
-            {% for item in all_dates%}
+            {% for entry in day_list %}
             <tr>
-                <td>{{ item }}</td>
-                <td>IDEA</td>
-                <td>{{ row_data[0] }}</td>
-                <td>{{ row_data[1] }}</td>
-                <td>{{ row_data[2] }}</td>
-                <td>{{ row_data[3] }}</td>
-                <td>{{ row_data[4] }}</td>
-
+                <td>{{ entry[0] }}</td>
+                <td>{{ entry[1] }}</td>
+                <td>{{ entry[2] }}</td>
+                <td>{{ entry[3] }}</td>
+                <td>{{ entry[4] }}</td>
+                <td>{{ entry[5] }}</td>
+                <td>{{ entry[6] }}</td>
             </tr>
             {% endfor %}
             </tbody>

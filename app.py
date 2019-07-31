@@ -2,7 +2,7 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for  # For flask implementation
 from bson import ObjectId  # For ObjectId to work
 from pymongo import MongoClient
-import scheduleScrapper as ss
+import displaySchedule as ds
 
 app = Flask(__name__)
 title = "Sample form submission with MongoDB"
@@ -64,9 +64,9 @@ def schedule():
 
     day_list = []
     for day in month_date:
-        aug = schedule_test.find({"date": day})
-        print(aug[0])
-        for item in aug:
+        aug_events = schedule_test.find({"date": day})
+        merged = ds.merge_rows(aug_events)
+        for item in merged:
             content = item["content"]
             date = item["date"]
             union_name = item["union_name"]
@@ -74,11 +74,13 @@ def schedule():
             SP = item["SP"]
             MC_AC = item["MC_AC"]
             venue = item["venue"]
-            if content == "":  # not show groups which has nothing planned on that date
+            if content == "" or content == "Invisible":  # not show certain groups
                 continue
             else:
                 new_entry = [date,union_name,content,time,SP,MC_AC,venue]
                 day_list.append(new_entry)
+    print("DAY LIST-------------")
+    print(day_list)
     return render_template("schedule.html", day_list=day_list)
 
 

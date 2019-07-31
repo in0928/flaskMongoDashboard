@@ -12,6 +12,10 @@ body, html {
     padding-left: 10px !important;
 }
 
+option {
+    background-color: #faebd7
+}
+
 /*
  * Off Canvas sidebar at medium breakpoint
  * --------------------------------------------------

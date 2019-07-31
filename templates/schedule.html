@@ -9,8 +9,17 @@ Monthly Schedule From COM
 {% endblock %}
 
 {% block body %}
+
 <!--    Data from COM-->
 <div class="col main pt-5 mt-3">
+    <div>
+        <label>Filter by Union Name</label>
+            <select name="union-name">
+                {% for name in all_union_names %}
+                <option>{{ name }}</option>
+                {% endfor %}
+            </select>
+</div>
 <div class="col-lg-9 col-md-8">
     <div class="table-responsive">
         <table class="table table-striped">
@@ -26,15 +35,12 @@ Monthly Schedule From COM
             </tr>
             </thead>
             <tbody>
-            {% for entry in day_list %}
+            {% for entry in event_list %}
             <tr>
-                <td>{{ entry[0] }}</td>
-                <td>{{ entry[1] }}</td>
-                <td>{{ entry[2] }}</td>
-                <td>{{ entry[3] }}</td>
-                <td>{{ entry[4] }}</td>
-                <td>{{ entry[5] }}</td>
-                <td>{{ entry[6] }}</td>
+                <td rowspan="">{{ entry[0] }}</td>
+                {% for cell in entry[1:] %}
+                <td>{{ cell }}</td>
+                {% endfor %}
             </tr>
             {% endfor %}
             </tbody>

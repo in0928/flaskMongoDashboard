@@ -2,11 +2,11 @@ from bs4 import BeautifulSoup as bs
 from requests import Session
 from selenium import webdriver
 import re
-from pymongo import MongoClient
+import mongoDBConnector
 
-client = MongoClient("mongodb://127.0.0.1:27017")  # host uri
-db = client.test  # Select the database
-schedule_test = db.scheduleTest  # Select the collection name
+collections = mongoDBConnector.connect_mongo()
+schedule_test = collections[1]
+union_test = collections[2]
 
 login_url = "https://www.improveonline.jp/"
 
@@ -58,6 +58,10 @@ def get_unions():
         group_id = link[9:]
         name = a.text
         unions[name] = group_id
+        union_test.insert_one({
+            "union-name": name,
+            "group-id": unions[name]
+        })
     return unions
 
 
@@ -69,6 +73,8 @@ def get_table_data(SessionObj, url):
     return schedule_table
 
 def get_row_data(table, union_name):
+    # Need to initialize the DB
+    schedule_test.delete_many({})
     for row in table:
         row_date = row.find("th")
         row_data = row.find_all("td")

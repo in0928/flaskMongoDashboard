@@ -14,29 +14,24 @@ def merge_rows(cursor):
         count = i + 0
 
         for entry in new_list[i + 1:]:  # from forward
-            print(e1["content"])
             if e1["content"] == "" or e1["content"] == "Invisible":
                 count += 1
                 continue
-            elif similar_enough(e1["content"], entry["content"]) and similar_enough(e1["time"],
-                                                                                    entry["time"]) and similar_enough(
-                    e1["SP"], entry["SP"]) and similar_enough(e1["venue"], entry["venue"]):
+            elif similar_enough(e1["content"], entry["content"]) and \
+                    similar_enough(e1["time"], entry["time"]) and \
+                    similar_enough(e1["SP"], entry["SP"]) and \
+                    similar_enough(e1["venue"], entry["venue"]):
                 indice_of_duplicates.append(count + 1)
-                print("-------------------------")
-                print(e1)
-                print(entry)
                 count += 1
             else:
                 count += 1
                 continue
-        print(indice_of_duplicates)
 
         names = [e1["union_name"]]
         for index in indice_of_duplicates:
             name = new_list[index]["union_name"]
             names.append(name)
-            new_list[index][
-                "content"] = "Invisible"  # set content so the if clause in app.py will filter the duplicates out
+            new_list[index]["content"] = "Invisible"  # set content so the if clause in app.py will filter the duplicates out
 
         new_name = ", ".join(names)  # should be like "A, B, C"
         e1["union_name"] = new_name

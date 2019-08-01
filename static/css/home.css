@@ -6,19 +6,6 @@ div.col-lg-9.col-md-8 {
     max-width: 100%;
 }
 
-thead.thead-inverse{
-    background-color: antiquewhite;
-}
-
-/*overwrite the row color*/
-.table-striped tbody tr:nth-of-type(even) {
-    background-color: rgba(0,0,0,.05);
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fff;
-}
-
 ul.nav.nav-tabs li.nav-item a.nav-link{
     padding: 0.5rem 1.5rem;
 }

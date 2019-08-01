@@ -16,6 +16,18 @@ option {
     background-color: #faebd7
 }
 
+thead.thead-inverse{
+    background-color: antiquewhite;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
 /*
  * Off Canvas sidebar at medium breakpoint
  * --------------------------------------------------

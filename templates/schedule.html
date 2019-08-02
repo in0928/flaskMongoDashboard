@@ -12,41 +12,48 @@ Monthly Schedule From COM
 
 <!--    Data from COM-->
 <div class="col main pt-5 mt-3">
-    <div>
-        <label>Filter by Union Name</label>
-            <select id="union-name-dropdown">
-                {% for name in all_union_names %}
-                <option>{{ name }}</option>
-                {% endfor %}
-            </select>
-</div>
-<div class="col-lg-9 col-md-8">
-    <div class="table-responsive">
-        <table class="table table-striped" id="com-schedule">
-            <thead class="thead-inverse">
-            <tr>
-                <th></th>
-                <th>Union</th>
-                <th>内容</th>
-                <th>時間</th>
-                <th>SP</th>
-                <th>MC/AC</th>
-                <th>会場</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for entry in event_list %}
-            <tr>
-                <td rowspan="">{{ entry[0] }}</td>
-                {% for cell in entry[1:] %}
-                <td>{{ cell }}</td>
-                {% endfor %}
-            </tr>
+    <div class="header">
+        <select class="filter" id="union-name-dropdown">
+            <option class="placeholder" value="" disabled selected hidden>Filter by Union Name</option>
+            {% for name in all_union_names %}
+            <option>{{ name }}</option>
             {% endfor %}
-            </tbody>
-        </table>
+            <option value="">全てのユニオン</option>
+        </select>
+        <p class="hovertool"><u>表示のロジックについて</u>
+            <span class="hiddentext">*イベントがない日は表示されません<br>
+                **異なるユニオンの同じイベントに関して、"MC/AC"を除く全ての項目が一致する場合のみ、同一イベントと見なします
+            </span>
+        </p>
+        <!--            -->
+        <!--        </p>-->
     </div>
-</div>
+    <div class="col-lg-9 col-md-8">
+        <div class="table-responsive">
+            <table class="table table-striped" id="com-schedule">
+                <thead class="thead-inverse">
+                <tr>
+                    <th></th>
+                    <th>Union</th>
+                    <th>内容</th>
+                    <th>時間</th>
+                    <th>SP</th>
+                    <th>MC/AC</th>
+                    <th>会場</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entry in event_list %}
+                <tr>
+                    {% for cell in entry %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
     {% block script %}
     <script src="{{ url_for('static', filename='js/tableFilter.js') }}"></script>
     {% endblock %}

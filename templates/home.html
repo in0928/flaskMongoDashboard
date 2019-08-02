@@ -93,7 +93,7 @@ Dashboard
     <!--                </div>-->
     <!--            </div>-->
 
-<!--    <hr>-->
+    <!--    <hr>-->
     <br>
     <div class="col-lg-6">
         <!-- Nav tabs -->
@@ -115,11 +115,23 @@ Dashboard
         <!-- Tab panes -->
         <div class="tab-content">
             <br>
+
+
             <div role="tabpanel" class="tab-pane active" id="people">
-                <p>The table is sorted by the newest record. *REQUIRES SEARCH FUNCTIONALITY</p>
                 <div class="col-lg-9 col-md-8">
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="people-list">
+                            <div class="header">
+                                <input class="search" id="people-search" placeholder="Search Name">
+                                <p class="hovertool"><u>表示のロジックについて</u>
+                                    <span class="hiddentext">*この表は簡易表示あり、重要な項目しか表示されていません。フルリストはメニューの"View Full List"からアクセスしてください<br>
+                **お気に入りと最新の10人しか表示されません<br>
+                ***まだお気に入りの機能はありません
+            </span>
+                                </p>
+                                <!--            -->
+                                <!--        </p>-->
+                            </div>
                             <thead class="thead-inverse">
                             <tr>
                                 <th>Name</th>
@@ -131,22 +143,6 @@ Dashboard
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Tanaka Taro</td>
-                                <td>23</td>
-                                <td>Other</td>
-                                <td>Just Met</td>
-                                <td>long string should be herelong string should be herelong string should be herelong string should be herelong string should be here</td>
-                                <td>some tags</td>
-                            </tr>
-                            <tr>
-                                <td>Name2</td>
-                                <td>33</td>
-                                <td>WIP</td>
-                                <td>theme</td>
-                                <td>responsive</td>
-                                <td>Tag1, tag2, tag3, tag4, tag5, tag6, more tags, more and more, just for testing</td>
-                            </tr>
                             {% for person in people_list %}
                             <tr>
                                 <td>{{ person["full-name"] }}</td>
@@ -185,258 +181,258 @@ Dashboard
     </div>
 
 
-    <a id="features"></a>
-    <hr>
-    <!--    <p class="lead mt-5">-->
-    <!--        Are you ready for Bootstap 4? It's the 4th generation of this popular responsive framework. Bootstrap 4 will-->
-    <!--        include some interesting-->
-    <!--        new features such as flexbox, 5 grid sizes (now including xl), cards, `em` sizing, CSS normalization (reboot)-->
-    <!--        and larger font-->
-    <!--        sizes.-->
-    <!--    </p>-->
-    <div class="row my-4">
-        <div class="col-lg-3 col-md-4">
-            <div class="card">
-                <img class="card-img-top img-fluid" src="//placehold.it/740x180/bbb/fff?text=..." alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Layouts</h4>
-                    <p class="card-text">Flexbox provides simpler, more flexible layout options like vertical
-                        centering.</p>
-                    <a href="#" class="btn btn-primary">Button</a>
-                </div>
-            </div>
-            <div class="card card-inverse bg-inverse mt-3">
-                <div class="card-body">
-                    <h3 class="card-title">Flexbox</h3>
-                    <p class="card-text">Flexbox is now the default, and Bootstrap 4 supports SASS out of the box.</p>
-                    <a href="#" class="btn btn-outline-secondary">Outline</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/row-->
+<!--    <a id="features"></a>-->
+<!--    <hr>-->
+<!--    <p class="lead mt-5">-->
+<!--        Are you ready for Bootstap 4? It's the 4th generation of this popular responsive framework. Bootstrap 4 will-->
+<!--        include some interesting-->
+<!--        new features such as flexbox, 5 grid sizes (now including xl), cards, `em` sizing, CSS normalization (reboot)-->
+<!--        and larger font-->
+<!--        sizes.-->
+<!--    </p>-->
+<!--    <div class="row my-4">-->
+<!--        <div class="col-lg-3 col-md-4">-->
+<!--            <div class="card">-->
+<!--                <img class="card-img-top img-fluid" src="//placehold.it/740x180/bbb/fff?text=..." alt="Card image cap">-->
+<!--                <div class="card-body">-->
+<!--                    <h4 class="card-title">Layouts</h4>-->
+<!--                    <p class="card-text">Flexbox provides simpler, more flexible layout options like vertical-->
+<!--                        centering.</p>-->
+<!--                    <a href="#" class="btn btn-primary">Button</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card card-inverse bg-inverse mt-3">-->
+<!--                <div class="card-body">-->
+<!--                    <h3 class="card-title">Flexbox</h3>-->
+<!--                    <p class="card-text">Flexbox is now the default, and Bootstrap 4 supports SASS out of the box.</p>-->
+<!--                    <a href="#" class="btn btn-outline-secondary">Outline</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/row&ndash;&gt;-->
 
-    <a id="more"></a>
-    <hr>
-    <h2 class="sub-header mt-5">Use card decks for equal height rows of cards</h2>
-    <div class="mb-3">
-        <div class="card-deck">
-            <div class="card card-inverse card-success text-center">
-                <div class="card-body">
-                    <blockquote class="card-blockquote">
-                        <p>It's really good news that the new Bootstrap 4 now has support for CSS 3 flexbox.</p>
-                        <footer>Makes flexible layouts <cite title="Source Title">Faster</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card card-inverse card-danger text-center">
-                <div class="card-body">
-                    <blockquote class="card-blockquote">
-                        <p>The Bootstrap 3.x element that was called "Panel" before, is now called a "Card".</p>
-                        <footer>All of this makes more <cite title="Source Title">Sense</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card card-inverse card-warning text-center">
-                <div class="card-body">
-                    <blockquote class="card-blockquote">
-                        <p>There are also some interesting new text classes for uppercase and capitalize.</p>
-                        <footer>These handy utilities make it <cite title="Source Title">Easy</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card card-inverse card-info text-center">
-                <div class="card-body">
-                    <blockquote class="card-blockquote">
-                        <p>If you want to use cool icons in Bootstrap 4, you'll have to find your own such as Font
-                            Awesome or Ionicons.</p>
-                        <footer>The Glyphicons are not <cite title="Source Title">Included</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/row-->
+<!--    <a id="more"></a>-->
+<!--    <hr>-->
+<!--    <h2 class="sub-header mt-5">Use card decks for equal height rows of cards</h2>-->
+<!--    <div class="mb-3">-->
+<!--        <div class="card-deck">-->
+<!--            <div class="card card-inverse card-success text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <blockquote class="card-blockquote">-->
+<!--                        <p>It's really good news that the new Bootstrap 4 now has support for CSS 3 flexbox.</p>-->
+<!--                        <footer>Makes flexible layouts <cite title="Source Title">Faster</cite></footer>-->
+<!--                    </blockquote>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card card-inverse card-danger text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <blockquote class="card-blockquote">-->
+<!--                        <p>The Bootstrap 3.x element that was called "Panel" before, is now called a "Card".</p>-->
+<!--                        <footer>All of this makes more <cite title="Source Title">Sense</cite></footer>-->
+<!--                    </blockquote>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card card-inverse card-warning text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <blockquote class="card-blockquote">-->
+<!--                        <p>There are also some interesting new text classes for uppercase and capitalize.</p>-->
+<!--                        <footer>These handy utilities make it <cite title="Source Title">Easy</cite></footer>-->
+<!--                    </blockquote>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card card-inverse card-info text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <blockquote class="card-blockquote">-->
+<!--                        <p>If you want to use cool icons in Bootstrap 4, you'll have to find your own such as Font-->
+<!--                            Awesome or Ionicons.</p>-->
+<!--                        <footer>The Glyphicons are not <cite title="Source Title">Included</cite></footer>-->
+<!--                    </blockquote>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/row&ndash;&gt;-->
 
-    <a id="flexbox"></a>
-    <hr>
-    <h2 class="mt-5">Masonry-style grid columns</h2>
-    <h6>with Bootstrap 4 flexbox</h6>
+<!--    <a id="flexbox"></a>-->
+<!--    <hr>-->
+<!--    <h2 class="mt-5">Masonry-style grid columns</h2>-->
+<!--    <h6>with Bootstrap 4 flexbox</h6>-->
 
-    <div class="card-columns mb-3">
-        <div class="card">
-            <img class="card-img-top img-fluid" src="//placehold.it/600x200/444/fff?text=..." alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">New XL Grid Tier</h4>
-                <p class="card-text">With screens getting smaller, Bootstrap 4 introduces a new grid breakpoint with the
-                    col-xl-* classes. This extra tier extends the media query range all the way down to 576 px.
-                    Eventhough the new XL tier would make one think it’s been added to support extra large screens, it’s
-                    actually the opposite.</p>
-            </div>
-        </div>
-        <div class="card card-body">
-            <blockquote class="card-blockquote">
-                <p>Bootstrap 4 will be lighter and easier to customize.</p>
-                <footer>
-                    <small class="text-muted">
-                        Someone famous like <cite title="Source Title">Mark Otto</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card">
-            <img class="card-img-top img-fluid" src="//placehold.it/600x200/bbb/fff?text=..." alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-            </div>
-        </div>
-        <div class="card card-body card-inverse card-primary text-center">
-            <blockquote class="card-blockquote">
-                <p>Create masonry or Pinterest-style card layouts in Bootstrap 4.</p>
-                <footer>
-                    <small>
-                        Someone famous in <cite title="Source Title">Bootstrap</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card card-body text-center">
-            <h4 class="card-title">Clever heading</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text">
-                <small class="text-muted">Last updated 5 mins ago</small>
-            </p>
-        </div>
-        <div class="card">
-            <img class="card-img img-fluid" src="//placehold.it/600x200/777/fff?text=..." alt="Card image">
-        </div>
-        <div class="card card-body text-right">
-            <blockquote class="card-blockquote">
-                <p>There are also some interesting new text classes to uppercase or capitalize.</p>
-                <footer>
-                    <small class="text-muted">
-                        Someone famous in <cite title="Source Title">Bootstrap</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card card-body">
-            <h4 class="card-title">Responsive</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <ul class="list-unstyled">
-                    <li class="text-capitalize"><code class="text-lowercase">text-capitalize</code> Capitalize each word
-                    </li>
-                    <li class="text-uppercase"><code class="text-lowercase">text-uppercase</code> Uppercase text</li>
-                    <li class="text-success"><code>text-success</code> Contextual colors for text</li>
-                    <li><code>text-muted</code> <span class="text-muted">Lighten with muted</span></li>
-                    <li><code>text-info</code> <span class="text-muted">Info text color</span></li>
-                    <li><code>text-danger</code> <span class="text-muted">Danger text color</span></li>
-                    <li><code>text-warning</code> <span class="text-muted">Warning text color</span></li>
-                    <li><code>text-primary</code> <span class="text-primary">Primary text color</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card card-body">
-            <h4 class="card-title">Heading</h4>
-            <p class="card-text">So now that you've seen some of what Bootstrap 4 has to offer, are you going to give it
-                a try?</p>
-            <p class="card-text">
-                <small class="text-muted">Last updated 12 mins ago</small>
-            </p>
-        </div>
-    </div>
-    <!--/card-columns-->
+<!--    <div class="card-columns mb-3">-->
+<!--        <div class="card">-->
+<!--            <img class="card-img-top img-fluid" src="//placehold.it/600x200/444/fff?text=..." alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <h4 class="card-title">New XL Grid Tier</h4>-->
+<!--                <p class="card-text">With screens getting smaller, Bootstrap 4 introduces a new grid breakpoint with the-->
+<!--                    col-xl-* classes. This extra tier extends the media query range all the way down to 576 px.-->
+<!--                    Eventhough the new XL tier would make one think it’s been added to support extra large screens, it’s-->
+<!--                    actually the opposite.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card card-body">-->
+<!--            <blockquote class="card-blockquote">-->
+<!--                <p>Bootstrap 4 will be lighter and easier to customize.</p>-->
+<!--                <footer>-->
+<!--                    <small class="text-muted">-->
+<!--                        Someone famous like <cite title="Source Title">Mark Otto</cite>-->
+<!--                    </small>-->
+<!--                </footer>-->
+<!--            </blockquote>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img class="card-img-top img-fluid" src="//placehold.it/600x200/bbb/fff?text=..." alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <h4 class="card-title">Card title</h4>-->
+<!--                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
+<!--                <p class="card-text">-->
+<!--                    <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card card-body card-inverse card-primary text-center">-->
+<!--            <blockquote class="card-blockquote">-->
+<!--                <p>Create masonry or Pinterest-style card layouts in Bootstrap 4.</p>-->
+<!--                <footer>-->
+<!--                    <small>-->
+<!--                        Someone famous in <cite title="Source Title">Bootstrap</cite>-->
+<!--                    </small>-->
+<!--                </footer>-->
+<!--            </blockquote>-->
+<!--        </div>-->
+<!--        <div class="card card-body text-center">-->
+<!--            <h4 class="card-title">Clever heading</h4>-->
+<!--            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
+<!--            <p class="card-text">-->
+<!--                <small class="text-muted">Last updated 5 mins ago</small>-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img class="card-img img-fluid" src="//placehold.it/600x200/777/fff?text=..." alt="Card image">-->
+<!--        </div>-->
+<!--        <div class="card card-body text-right">-->
+<!--            <blockquote class="card-blockquote">-->
+<!--                <p>There are also some interesting new text classes to uppercase or capitalize.</p>-->
+<!--                <footer>-->
+<!--                    <small class="text-muted">-->
+<!--                        Someone famous in <cite title="Source Title">Bootstrap</cite>-->
+<!--                    </small>-->
+<!--                </footer>-->
+<!--            </blockquote>-->
+<!--        </div>-->
+<!--        <div class="card card-body">-->
+<!--            <h4 class="card-title">Responsive</h4>-->
+<!--            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional-->
+<!--                content. This card has even longer content than the first to show that equal height action.</p>-->
+<!--            <p class="card-text">-->
+<!--                <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <div class="card-body">-->
+<!--                <ul class="list-unstyled">-->
+<!--                    <li class="text-capitalize"><code class="text-lowercase">text-capitalize</code> Capitalize each word-->
+<!--                    </li>-->
+<!--                    <li class="text-uppercase"><code class="text-lowercase">text-uppercase</code> Uppercase text</li>-->
+<!--                    <li class="text-success"><code>text-success</code> Contextual colors for text</li>-->
+<!--                    <li><code>text-muted</code> <span class="text-muted">Lighten with muted</span></li>-->
+<!--                    <li><code>text-info</code> <span class="text-muted">Info text color</span></li>-->
+<!--                    <li><code>text-danger</code> <span class="text-muted">Danger text color</span></li>-->
+<!--                    <li><code>text-warning</code> <span class="text-muted">Warning text color</span></li>-->
+<!--                    <li><code>text-primary</code> <span class="text-primary">Primary text color</span></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card card-body">-->
+<!--            <h4 class="card-title">Heading</h4>-->
+<!--            <p class="card-text">So now that you've seen some of what Bootstrap 4 has to offer, are you going to give it-->
+<!--                a try?</p>-->
+<!--            <p class="card-text">-->
+<!--                <small class="text-muted">Last updated 12 mins ago</small>-->
+<!--            </p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/card-columns&ndash;&gt;-->
 
-    <a id="layouts"></a>
-    <hr>
-    <h2 class="sub-header mt-5">Interesting layouts and elements</h2>
-    <div class="row mb-3">
-        <div class="col-lg-6">
+<!--    <a id="layouts"></a>-->
+<!--    <hr>-->
+<!--    <h2 class="sub-header mt-5">Interesting layouts and elements</h2>-->
+<!--    <div class="row mb-3">-->
+<!--        <div class="col-lg-6">-->
 
-            <div class="card mb-3">
-                <div class="card-header">
-                    Bye .well, .panel &amp; .thumbnail
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Replaced with .card</h4>
-                    <p class="card-text">All of these Bootstrap 3.x components have been dropped entirely for the new
-                        card component.</p>
-                    <button type="button" class="btn btn-secondary btn-lg">Large</button>
-                </div>
-            </div>
+<!--            <div class="card mb-3">-->
+<!--                <div class="card-header">-->
+<!--                    Bye .well, .panel &amp; .thumbnail-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h4 class="card-title">Replaced with .card</h4>-->
+<!--                    <p class="card-text">All of these Bootstrap 3.x components have been dropped entirely for the new-->
+<!--                        card component.</p>-->
+<!--                    <button type="button" class="btn btn-secondary btn-lg">Large</button>-->
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
-        <div class="clearfix"></div>
-        <div class="col-lg-6">
-            <div class="card card-default card-body">
-                <ul id="tabsJustified" class="nav nav-tabs nav-justified">
-                    <li class="nav-item">
-                        <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">More</a>
-                    </li>
-                </ul>
-                <!--/tabs-->
-                <br>
-                <div id="tabsJustifiedContent" class="tab-content">
-                    <div class="tab-pane" id="tab1">
-                        <div class="list-group">
-                            <a href="" class="list-group-item"><span class="float-right label label-success">51</span>
-                                Home Link</a>
-                            <a href="" class="list-group-item"><span class="float-right label label-success">8</span>
-                                Link 2</a>
-                            <a href="" class="list-group-item"><span class="float-right label label-success">23</span>
-                                Link 3</a>
-                            <a href="" class="list-group-item text-muted">Link n..</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane active" id="tab2">
-                        <div class="row">
-                            <div class="col-sm-7">
-                                <h4>Profile Section</h4>
-                                <p>Imagine creating this simple user profile inside a tab card.</p>
-                            </div>
-                            <div class="col-sm-5"><img src="//placehold.it/170"
-                                                       class="float-right img-responsive img-rounded"></div>
-                        </div>
-                        <hr>
-                        <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>
-                        <div class="spacer5"></div>
-                    </div>
-                    <div class="tab-pane" id="tab3">
-                        <div class="list-group">
-                            <a href="" class="list-group-item"><span
-                                    class="float-right label label-info label-pill">44</span> <code>.panel</code> is now
-                                <code>.card</code></a>
-                            <a href="" class="list-group-item"><span
-                                    class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>
-                                is deprecated</a>
-                            <a href="" class="list-group-item"><span
-                                    class="float-right label label-info label-pill">23</span> <code>.badge</code> is now
-                                <code>.label-pill</code></a>
-                            <a href="" class="list-group-item text-muted">Message n..</a>
-                        </div>
-                    </div>
-                </div>
-                <!--/tabs content-->
-            </div><!--/card-->
-        </div><!--/col-->
+<!--        <div class="clearfix"></div>-->
+<!--        <div class="col-lg-6">-->
+<!--            <div class="card card-default card-body">-->
+<!--                <ul id="tabsJustified" class="nav nav-tabs nav-justified">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">List</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">Profile</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">More</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                &lt;!&ndash;/tabs&ndash;&gt;-->
+<!--                <br>-->
+<!--                <div id="tabsJustifiedContent" class="tab-content">-->
+<!--                    <div class="tab-pane" id="tab1">-->
+<!--                        <div class="list-group">-->
+<!--                            <a href="" class="list-group-item"><span class="float-right label label-success">51</span>-->
+<!--                                Home Link</a>-->
+<!--                            <a href="" class="list-group-item"><span class="float-right label label-success">8</span>-->
+<!--                                Link 2</a>-->
+<!--                            <a href="" class="list-group-item"><span class="float-right label label-success">23</span>-->
+<!--                                Link 3</a>-->
+<!--                            <a href="" class="list-group-item text-muted">Link n..</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="tab-pane active" id="tab2">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-sm-7">-->
+<!--                                <h4>Profile Section</h4>-->
+<!--                                <p>Imagine creating this simple user profile inside a tab card.</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-sm-5"><img src="//placehold.it/170"-->
+<!--                                                       class="float-right img-responsive img-rounded"></div>-->
+<!--                        </div>-->
+<!--                        <hr>-->
+<!--                        <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>-->
+<!--                        <div class="spacer5"></div>-->
+<!--                    </div>-->
+<!--                    <div class="tab-pane" id="tab3">-->
+<!--                        <div class="list-group">-->
+<!--                            <a href="" class="list-group-item"><span-->
+<!--                                    class="float-right label label-info label-pill">44</span> <code>.panel</code> is now-->
+<!--                                <code>.card</code></a>-->
+<!--                            <a href="" class="list-group-item"><span-->
+<!--                                    class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>-->
+<!--                                is deprecated</a>-->
+<!--                            <a href="" class="list-group-item"><span-->
+<!--                                    class="float-right label label-info label-pill">23</span> <code>.badge</code> is now-->
+<!--                                <code>.label-pill</code></a>-->
+<!--                            <a href="" class="list-group-item text-muted">Message n..</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;/tabs content&ndash;&gt;-->
+<!--            </div>&lt;!&ndash;/card&ndash;&gt;-->
+<!--        </div>&lt;!&ndash;/col&ndash;&gt;-->
         <!--        <div class="col-lg-6">-->
         <!--            <div id="accordion" role="tablist" aria-multiselectable="true">-->
         <!--                <div class="card">-->
@@ -470,13 +466,19 @@ Dashboard
         <!--                    </div>-->
         <!--                </div>-->
         <!--            </div>-->
-    </div><!--/col-->
-</div><!--/row-->
+<br>
+</div><!--/col-->
+<!--</div>&lt;!&ndash;/row&ndash;&gt;-->
 
-</div>
-<!--/main col-->
-</div>
+<!--</div>-->
+<!--&lt;!&ndash;/main col&ndash;&gt;-->
+<!--</div>-->
 
-</div>
+<!--</div>-->
 
+
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/tableSearch.js') }}"></script>
 {% endblock %}

@@ -1,22 +1,22 @@
-document.querySelector("#union-name-dropdown").onchange = applyFilter;
+document.querySelector("#people-search").oninput = applySearch;
 
-function applyFilter() {
-    filter();
+function applySearch() {
+    search();
     alternate();
 }
 
 
-function filter() {
+function search() {
     // Declare variables
-    var selection, filter, table, tr, td, i, txtValue;
-    selection = document.getElementById("union-name-dropdown");
-    filter = selection.value.toUpperCase();
-    table = document.getElementById("com-schedule")
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("people-search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("people-list")
     tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
+        td = tr[i].getElementsByTagName("td")[0];
         if (td) {
             txtValue = td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -31,7 +31,7 @@ function filter() {
 
 function alternate(){
   if(document.getElementsByTagName){
-    var table = document.getElementById("com-schedule");
+    var table = document.getElementById("people-list")
     var rows = table.getElementsByTagName("tr");
     var filteredRows = []
     for(i = 0; i < rows.length; i++) {

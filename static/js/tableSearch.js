@@ -1,4 +1,17 @@
-document.querySelector("#people-search").oninput = applySearch;
+document.addEventListener("DOMContentLoaded", fill_dropdown(getId()));
+document.querySelector("#table-search").oninput = applySearch;
+
+//get tableId
+function getId() {
+    var element = document.querySelector(".table-striped")
+    var id = element.id;
+    return id;
+}
+
+tableId = getId();
+//if(tableId === "dream-list"){
+//
+//}
 
 function applySearch() {
     search();
@@ -6,12 +19,27 @@ function applySearch() {
 }
 
 
-function search() {
+function fill_dropdown() {
+//    get col names
+    console.log("i am called")
+    var table = document.getElementsByClassName("table-responsive")[0];
+    var th = table.getElementsByTagName("th");
+//    get dropdown menu
+    var dropdown = document.getElementById("search-by-col-name");
+    console.log(dropdown);
+    for(i = 0; i < th.length; i++) {
+        opt = document.createElement("option")
+        opt.appendChild(document.createTextNode(th[i].innerText))
+        dropdown.appendChild(opt)
+    }
+}
+
+function search(tableId) {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("people-search");
+    input = document.getElementById("table-search");
     filter = input.value.toUpperCase();
-    table = document.getElementById("people-list")
+    table = document.getElementById(tableId)
     tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query
@@ -29,9 +57,9 @@ function search() {
 }
 
 
-function alternate(){
+function alternate(tableId){
   if(document.getElementsByTagName){
-    var table = document.getElementById("people-list")
+    var table = document.getElementById(tableId)
     var rows = table.getElementsByTagName("tr");
     var filteredRows = []
     for(i = 0; i < rows.length; i++) {

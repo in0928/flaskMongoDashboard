@@ -10,8 +10,17 @@ ul.nav.nav-tabs li.nav-item a.nav-link{
     padding: 0.5rem 1.5rem;
 }
 
-#people-search{
+#table-search{
     padding: 10px 30px 10px 10px;
-    min-width: 50%;
+    min-width: 40%;
+}
+
+div.header p{
+    display: inline-block;
+}
+
+div.header #search-by-col-name{
+    padding: 10px 30px 10px 10px;
+    min-width: 30%;
 }
 

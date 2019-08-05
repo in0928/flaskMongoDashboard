@@ -1,0 +1,77 @@
+{% extends "common.html" %}
+
+{% block title%}
+Monthly Schedule From COM
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/schedule.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/lists.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<!--    Data from COM-->
+<div class="col main pt-5 mt-3">
+    <div class="header">
+        <select class="filter" id="union-name-dropdown">
+            <option class="placeholder" value="" disabled selected hidden>Filter by Union Name</option>
+            {% for name in all_union_names %}
+            <option>{{ name }}</option>
+            {% endfor %}
+            <option value="">全てのユニオン</option>
+        </select>
+        <p class="hovertool"><u>表示のロジックについて</u>
+            <span class="hiddentext">*イベントがない日は表示されません<br>
+                **異なるユニオンの同じイベントに関して、"MC/AC"を除く全ての項目が一致する場合のみ、同一イベントと見なします
+            </span>
+        </p>
+        <!--            -->
+        <!--        </p>-->
+    </div>
+    <div class="col-lg-9 col-md-8">
+        <div class="table-responsive">
+            <table class="table table-striped" id="com-schedule">
+                <thead class="thead-inverse">
+                <tr>
+                    <th></th>
+                    <th>名前</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>ステータス</th>
+                    <th>印象・メモ</th>
+                    <th>性格</th>
+                    <th>ニーズタグ</th>
+                    <th>職業</th>
+                    <th>会社名</th>
+                    <th>勤務地</th>
+                    <th>住まい</th>
+                    <th>向上心</th>
+                    <th>私との関係</th>
+                    <th>知り合ったきっかけ</th>
+                </tr>
+                </thead>
+                <tr>
+                <td>dsadsa</td>
+                <td>dsadsa</td>
+                <td>dsadsa</td>
+                <td>dsadsa</td>
+                <td>dsadsa</td>
+                                    <td>dsadsa</td>
+                <td>dsadsa</td>
+                <td>dsadsa</td>
+                                    <td>dsadsa</td>
+                <td>dsadsa</td>
+                <td>dsadsa</td>
+
+                </tr>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% block script %}
+    <script src="{{ url_for('static', filename='js/tableFilter.js') }}"></script>
+    {% endblock %}
+
+    {% endblock %}

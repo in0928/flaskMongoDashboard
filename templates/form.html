@@ -10,69 +10,130 @@ Form
 
 {% block body %}
 <div class="col main pt-5 mt-3">
-    <form class="form-basic" method="post" action="{{ url_for('action') }}">
+    <div class="card card-default card-body">
+        <ul id="tabsJustified" class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">BA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">My Dreams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#resBars" data-toggle="tab">Restaurants & Bars</a>
+            </li>
+        </ul>
+        <!--/tabs-->
+        <br>
+        <div id="tabsJustifiedContent" class="tab-content">
+            <div class="tab-pane" id="tab1">
+                <form class="form-basic" method="post" action="{{ url_for('action') }}">
 
-        <div class="form-title-row">
-            <h1>New Contact</h1>
-        </div>
+                    <div class="form-title-row">
+                        <h1>New Contact</h1>
+                    </div>
 
-        <div class="form-row">
-            <label>Full name</label>
-            <input type="text" name="full-name" placeholder="LastName FirstName">
-        </div>
+                    <div class="form-row">
+                        <label>Full name</label>
+                        <input type="text" name="full-name" placeholder="LastName FirstName">
+                    </div>
 
-        <div class="form-row">
-            <label>Age</label>
-            <input type="text" name="age">
-        </div>
+                    <div class="form-row">
+                        <label>Age</label>
+                        <input type="text" name="age">
+                    </div>
 
-        <div class="form-row">
-            <label>Gender</label>
-            <div class="form-radio-buttons">
-                <label>
-                    <input type="radio" name="gender" value="male">
-                    <span>Male</span>
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="female">
-                    <span>Female</span>
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="other">
-                    <span>Other</span>
-                </label>
+                    <div class="form-row">
+                        <label>Gender</label>
+                        <div class="form-radio-buttons">
+                            <label>
+                                <input type="radio" name="gender" value="male">
+                                <span>Male</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female">
+                                <span>Female</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="other">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Status</label>
+                        <select name="status">
+                            <option>Just Met</option>
+                            <option>Friends</option>
+                            <option>BPR Done</option>
+                            <option>SPR Done</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Description</label>
+                        <textarea name="description"></textarea>
+                    </div>
+
+                    <!--in case I need a checkbox-->
+                    <!--        <div class="form-row">-->
+                    <!--            <label>Enter more details</label>-->
+                    <!--            <input type="checkbox" name="checkbox" checked>-->
+                    <!--        </div>-->
+
+                    <div class="form-row">
+                        <label>Extra Something</label>
+                        <input type="text" name="undecided">
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit">Submit Form</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="tab-pane active" id="tab2">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h4>Profile Section</h4>
+                        <p>Imagine creating this simple user profile inside a tab card.</p>
+                    </div>
+                    <div class="col-sm-5"><img src="//placehold.it/170"
+                                               class="float-right img-responsive img-rounded"></div>
+                </div>
+                <hr>
+                <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>
+                <div class="spacer5"></div>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <div class="list-group">
+                    <a href="" class="list-group-item"><span
+                            class="float-right label label-info label-pill">44</span> <code>.panel</code> is now
+                        <code>.card</code></a>
+                    <a href="" class="list-group-item"><span
+                            class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>
+                        is deprecated</a>
+                    <a href="" class="list-group-item"><span
+                            class="float-right label label-info label-pill">23</span> <code>.badge</code> is now
+                        <code>.label-pill</code></a>
+                    <a href="" class="list-group-item text-muted">Message n..</a>
+                </div>
             </div>
         </div>
+        <!--/tabs content-->
+    </div><!--/card-->
+</div><!--/col-->
 
-        <div class="form-row">
-            <label>Status</label>
-            <select name="status">
-                <option>Just Met</option>
-                <option>Friends</option>
-                <option>BPR Done</option>
-                <option>SPR Done</option>
-            </select>
-        </div>
+<!--/col-->
+</div><!--/row-->
 
-        <div class="form-row">
-            <label>Description</label>
-            <textarea name="description"></textarea>
-        </div>
+</div>
+<!--/main col-->
+</div>
 
-<!--in case I need a checkbox-->
-<!--        <div class="form-row">-->
-<!--            <label>Enter more details</label>-->
-<!--            <input type="checkbox" name="checkbox" checked>-->
-<!--        </div>-->
 
-        <div class="form-row">
-            <label>Extra Something</label>
-            <input type="text" name="undecided">
-        </div>
-
-        <div class="form-row">
-            <button type="submit">Submit Form</button>
-        </div>
-    </form>
 </div>
 {% endblock %}

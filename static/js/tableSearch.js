@@ -11,11 +11,11 @@ $(document).ready(function(){
             case "BA":
                 tableId = "ba-list";
                 break;
-            case "My Dreams":
+            case "Dreams":
                 tableId = "dream-list";
                 break;
-            case "Restaurants & Bars":
-                tableId = "restaurants-bars-list";
+            case "Places":
+                tableId = "place-list";
                 break;
             default:
                 tableId = "people-list"

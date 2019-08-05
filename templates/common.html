@@ -31,15 +31,21 @@
                 <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//www.codeply.com">Link</a>
+                <a class="nav-link" href="//www.codeply.com">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="//www.codeply.com">Links</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="//www.codeply.com">Contact</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="" data-toggle="collapse">About</a>
+                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">I'm feeling lucky</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Contact</a>
+                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Log out</a>
             </li>
         </ul>
     </div>
@@ -48,19 +54,19 @@
     <div class="row row-offcanvas row-offcanvas-left">
         <div class="col-md-3 col-lg-2 sidebar-offcanvas bg-light pl-0" id="sidebar" role="navigation">
             <ul class="nav flex-column sticky-top pl-0 pt-5 mt-3">
-                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports▾</a>
+                    <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Full Lists▾</a>
                     <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">
-                       <li class="nav-item"><a class="nav-link" href="">Report 1</a></li>
-                       <li class="nav-item"><a class="nav-link" href="">Report 2</a></li>
+                       <li class="nav-item"><a class="nav-link" href="{{ url_for('people') }}">People List</a></li>
+                       <li class="nav-item"><a class="nav-link" href="">BA List</a></li>
+                       <li class="nav-item"><a class="nav-link" href="">Dream List</a></li>
+                       <li class="nav-item"><a class="nav-link" href="">Place List</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('form') }}">Form</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('full_list') }}">View Full List</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('schedule') }}">Schedule (COM)</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('form') }}">Form</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Some Data Stuff</a></li>
 
             </ul>
         </div>

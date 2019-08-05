@@ -95,6 +95,61 @@ Dashboard
 
     <!--    <hr>-->
     <br>
+
+    <div class="col main pt-5 mt-3">
+    <div class="card card-default card-body">
+        <ul id="tabsJustified" class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">BA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">My Dreams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#resBars" data-toggle="tab">Restaurants & Bars</a>
+            </li>
+        </ul>
+        <!--/tabs-->
+        <br>
+        <div id="tabsJustifiedContent" class="tab-content">
+            <div class="tab-pane" id="tab1">something here
+            </div>
+            <div class="tab-pane active" id="tab2">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h4>Profile Section</h4>
+                        <p>Imagine creating this simple user profile inside a tab card.</p>
+                    </div>
+                    <div class="col-sm-5"><img src="//placehold.it/170"
+                                               class="float-right img-responsive img-rounded"></div>
+                </div>
+                <hr>
+                <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>
+                <div class="spacer5"></div>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <div class="list-group">
+                    <a href="" class="list-group-item"><span
+                            class="float-right label label-info label-pill">44</span> <code>.panel</code> is now
+                        <code>.card</code></a>
+                    <a href="" class="list-group-item"><span
+                            class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>
+                        is deprecated</a>
+                    <a href="" class="list-group-item"><span
+                            class="float-right label label-info label-pill">23</span> <code>.badge</code> is now
+                        <code>.label-pill</code></a>
+                    <a href="" class="list-group-item text-muted">Message n..</a>
+                </div>
+            </div>
+        </div>
+        <!--/tabs content-->
+    </div><!--/card-->
+</div><!--/col-->
+
+
     <div class="col-lg-6">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
@@ -105,10 +160,10 @@ Dashboard
                 <a class="nav-link" href="#ba" role="tab" data-toggle="tab">BA</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#my-dreams" role="tab" data-toggle="tab">My Dreams</a>
+                <a class="nav-link" href="#dreams" role="tab" data-toggle="tab">Dreams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#restaurants-bars" role="tab" data-toggle="tab">Restaurants & Bars</a>
+                <a class="nav-link" href="#places" role="tab" data-toggle="tab">Places</a>
             </li>
         </ul>
 
@@ -192,10 +247,10 @@ Dashboard
                 </div>
             </div>
 
-            <div role="tabpanel" class="tab-pane" id="my-dreams">
+            <div role="tabpanel" class="tab-pane" id="dreams">
                 <div class="col-lg-9 col-md-8">
                     <div class="table-responsive">
-                        <table class="table table-striped" id="dream-list">
+                        <table class="table table-striped" id="dreams-list">
                             <thead class="thead-inverse">
                             <tr>
                                 <th>Number</th>
@@ -218,7 +273,7 @@ Dashboard
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="restaurants-bars">
+            <div role="tabpanel" class="tab-pane" id="places">
                 <h4>Settings</h4>
                 <p>
                     4. Some of the Bootstrap 3.x components like well and panel have been dropped for the new card
@@ -422,100 +477,100 @@ Dashboard
 
     <!--        </div>-->
 
-    <!--        <div class="clearfix"></div>-->
-    <!--        <div class="col-lg-6">-->
-    <!--            <div class="card card-default card-body">-->
-    <!--                <ul id="tabsJustified" class="nav nav-tabs nav-justified">-->
-    <!--                    <li class="nav-item">-->
-    <!--                        <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">List</a>-->
-    <!--                    </li>-->
-    <!--                    <li class="nav-item">-->
-    <!--                        <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">Profile</a>-->
-    <!--                    </li>-->
-    <!--                    <li class="nav-item">-->
-    <!--                        <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">More</a>-->
-    <!--                    </li>-->
-    <!--                </ul>-->
-    <!--                &lt;!&ndash;/tabs&ndash;&gt;-->
-    <!--                <br>-->
-    <!--                <div id="tabsJustifiedContent" class="tab-content">-->
-    <!--                    <div class="tab-pane" id="tab1">-->
-    <!--                        <div class="list-group">-->
-    <!--                            <a href="" class="list-group-item"><span class="float-right label label-success">51</span>-->
-    <!--                                Home Link</a>-->
-    <!--                            <a href="" class="list-group-item"><span class="float-right label label-success">8</span>-->
-    <!--                                Link 2</a>-->
-    <!--                            <a href="" class="list-group-item"><span class="float-right label label-success">23</span>-->
-    <!--                                Link 3</a>-->
-    <!--                            <a href="" class="list-group-item text-muted">Link n..</a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="tab-pane active" id="tab2">-->
-    <!--                        <div class="row">-->
-    <!--                            <div class="col-sm-7">-->
-    <!--                                <h4>Profile Section</h4>-->
-    <!--                                <p>Imagine creating this simple user profile inside a tab card.</p>-->
-    <!--                            </div>-->
-    <!--                            <div class="col-sm-5"><img src="//placehold.it/170"-->
-    <!--                                                       class="float-right img-responsive img-rounded"></div>-->
-    <!--                        </div>-->
-    <!--                        <hr>-->
-    <!--                        <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>-->
-    <!--                        <div class="spacer5"></div>-->
-    <!--                    </div>-->
-    <!--                    <div class="tab-pane" id="tab3">-->
-    <!--                        <div class="list-group">-->
-    <!--                            <a href="" class="list-group-item"><span-->
-    <!--                                    class="float-right label label-info label-pill">44</span> <code>.panel</code> is now-->
-    <!--                                <code>.card</code></a>-->
-    <!--                            <a href="" class="list-group-item"><span-->
-    <!--                                    class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>-->
-    <!--                                is deprecated</a>-->
-    <!--                            <a href="" class="list-group-item"><span-->
-    <!--                                    class="float-right label label-info label-pill">23</span> <code>.badge</code> is now-->
-    <!--                                <code>.label-pill</code></a>-->
-    <!--                            <a href="" class="list-group-item text-muted">Message n..</a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--                &lt;!&ndash;/tabs content&ndash;&gt;-->
-    <!--            </div>&lt;!&ndash;/card&ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;/col&ndash;&gt;-->
-    <!--        <div class="col-lg-6">-->
-    <!--            <div id="accordion" role="tablist" aria-multiselectable="true">-->
-    <!--                <div class="card">-->
-    <!--                    <div class="card-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"-->
-    <!--                         href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
-    <!--                        Accordion example-->
-    <!--                    </div>-->
-    <!--                    <div id="collapseOne" class="card-block collapse in" role="tabpanel" aria-labelledby="headingOne">-->
-    <!--                        <p>This is a Bootstrap 4 accordion that uses the <code>.card</code> classes instead of <code>.panel</code>.-->
-    <!--                            The single-open section aspect is not working because the parent option (dependent on-->
-    <!--                            .panel) has not yet been finalized in BS 4 alpha. </p>-->
-    <!--                    </div>-->
-    <!--                    <div class="card-header" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion"-->
-    <!--                         href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
-    <!--                        Mobile-first-->
-    <!--                    </div>-->
-    <!--                    <div id="collapseTwo" class="card-block collapse" role="tabpanel" aria-labelledby="headingTwo">-->
-    <!--                        <p>Just like it's predecesor, Bootstrap 4 is mobile-first so that you start by designing for-->
-    <!--                            smaller devices such as smartphones and tablets, then proceed to laptop and desktop-->
-    <!--                            layouts.</p>-->
-    <!--                    </div>-->
-    <!--                    <div class="card-header" role="tab" id="headingThree" data-toggle="collapse"-->
-    <!--                         data-parent="#accordion" href="#collapseThree" aria-expanded="false"-->
-    <!--                         aria-controls="collapseThree">-->
-    <!--                        Built for CSS3-->
-    <!--                    </div>-->
-    <!--                    <div id="collapseThree" class="card-block collapse" role="tabpanel" aria-labelledby="headingThree">-->
-    <!--                        <p>Bootstrap employs a handful of important global styles and settings that you’ll need to be-->
-    <!--                            aware of when using it, all of which are almost exclusively geared towards the normalization-->
-    <!--                            of cross browser styles.</p>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <br>
-</div><!--/col-->
+<!--            <div class="clearfix"></div>-->
+<!--            <div class="col-lg-6">-->
+<!--                <div class="card card-default card-body">-->
+<!--                    <ul id="tabsJustified" class="nav nav-tabs nav-justified">-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">List</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">Profile</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">More</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                    &lt;!&ndash;/tabs&ndash;&gt;-->
+<!--                    <br>-->
+<!--                    <div id="tabsJustifiedContent" class="tab-content">-->
+<!--                        <div class="tab-pane" id="tab1">-->
+<!--                            <div class="list-group">-->
+<!--                                <a href="" class="list-group-item"><span class="float-right label label-success">51</span>-->
+<!--                                    Home Link</a>-->
+<!--                                <a href="" class="list-group-item"><span class="float-right label label-success">8</span>-->
+<!--                                    Link 2</a>-->
+<!--                                <a href="" class="list-group-item"><span class="float-right label label-success">23</span>-->
+<!--                                    Link 3</a>-->
+<!--                                <a href="" class="list-group-item text-muted">Link n..</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="tab-pane active" id="tab2">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-sm-7">-->
+<!--                                    <h4>Profile Section</h4>-->
+<!--                                    <p>Imagine creating this simple user profile inside a tab card.</p>-->
+<!--                                </div>-->
+<!--                                <div class="col-sm-5"><img src="//placehold.it/170"-->
+<!--                                                           class="float-right img-responsive img-rounded"></div>-->
+<!--                            </div>-->
+<!--                            <hr>-->
+<!--                            <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>-->
+<!--                            <div class="spacer5"></div>-->
+<!--                        </div>-->
+<!--                        <div class="tab-pane" id="tab3">-->
+<!--                            <div class="list-group">-->
+<!--                                <a href="" class="list-group-item"><span-->
+<!--                                        class="float-right label label-info label-pill">44</span> <code>.panel</code> is now-->
+<!--                                    <code>.card</code></a>-->
+<!--                                <a href="" class="list-group-item"><span-->
+<!--                                        class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>-->
+<!--                                    is deprecated</a>-->
+<!--                                <a href="" class="list-group-item"><span-->
+<!--                                        class="float-right label label-info label-pill">23</span> <code>.badge</code> is now-->
+<!--                                    <code>.label-pill</code></a>-->
+<!--                                <a href="" class="list-group-item text-muted">Message n..</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;/tabs content&ndash;&gt;-->
+<!--                </div>&lt;!&ndash;/card&ndash;&gt;-->
+<!--            </div>&lt;!&ndash;/col&ndash;&gt;-->
+<!--            <div class="col-lg-6">-->
+<!--                <div id="accordion" role="tablist" aria-multiselectable="true">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"-->
+<!--                             href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                            Accordion example-->
+<!--                        </div>-->
+<!--                        <div id="collapseOne" class="card-block collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+<!--                            <p>This is a Bootstrap 4 accordion that uses the <code>.card</code> classes instead of <code>.panel</code>.-->
+<!--                                The single-open section aspect is not working because the parent option (dependent on-->
+<!--                                .panel) has not yet been finalized in BS 4 alpha. </p>-->
+<!--                        </div>-->
+<!--                        <div class="card-header" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion"-->
+<!--                             href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                            Mobile-first-->
+<!--                        </div>-->
+<!--                        <div id="collapseTwo" class="card-block collapse" role="tabpanel" aria-labelledby="headingTwo">-->
+<!--                            <p>Just like it's predecesor, Bootstrap 4 is mobile-first so that you start by designing for-->
+<!--                                smaller devices such as smartphones and tablets, then proceed to laptop and desktop-->
+<!--                                layouts.</p>-->
+<!--                        </div>-->
+<!--                        <div class="card-header" role="tab" id="headingThree" data-toggle="collapse"-->
+<!--                             data-parent="#accordion" href="#collapseThree" aria-expanded="false"-->
+<!--                             aria-controls="collapseThree">-->
+<!--                            Built for CSS3-->
+<!--                        </div>-->
+<!--                        <div id="collapseThree" class="card-block collapse" role="tabpanel" aria-labelledby="headingThree">-->
+<!--                            <p>Bootstrap employs a handful of important global styles and settings that you’ll need to be-->
+<!--                                aware of when using it, all of which are almost exclusively geared towards the normalization-->
+<!--                                of cross browser styles.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--/col-->
 <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
 
 <!--</div>-->
@@ -523,7 +578,8 @@ Dashboard
 <!--</div>-->
 
 <!--</div>-->
-
+    <br>
+</div>
 
 {% endblock %}
 

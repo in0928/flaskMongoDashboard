@@ -146,6 +146,8 @@ div.form-radio-buttons > label {
     background: #655cdb;
 }
 
+
+
 /*	Making the form responsive. Remove this media query
     if you don't need the form to work on mobile devices.
 @media (max-width: 600px) {

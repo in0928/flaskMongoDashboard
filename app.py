@@ -85,9 +85,9 @@ def schedule():  # will need to use scheduleScrapper to get data first, now it i
     return render_template("schedule.html", event_list=event_list, all_union_names=all_union_names)
 
 
-@app.route("/full-list")
-def full_list():
-    return render_template("fullList.html")
+@app.route("/people")
+def people():
+    return render_template("people.html")
 
 
 if __name__ == "__main__":

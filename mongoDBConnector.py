@@ -8,4 +8,5 @@ def connect_mongo():
     people_test = db.peopleTest  # Select the collection name
     schedule_test = db.scheduleTest
     union_test = db.unionTest
-    return people_test, schedule_test, union_test
+    ba_test = db.baTest
+    return people_test, schedule_test, union_test, ba_test

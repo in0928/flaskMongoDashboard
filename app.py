@@ -14,24 +14,19 @@ collections = mongoDBConnector.connect_mongo()
 people_test = collections[0]
 schedule_test = collections[1]
 union_test = collections[2]
+ba_test = collections[3]
 
-# use for COM schedule
-date_list = list(range(0, 32))
 
 @app.route("/")
 def home():
     people_list = people_test.find()
-    return render_template("home.html", people_list=people_list)
+    ba_list = ba_test.find()
+    return render_template("home.html", people_list=people_list, ba_list = ba_list)
 
 
 @app.route("/form")
 def form():
     return render_template("form.html")
-
-
-@app.route("/people")
-def people():
-    return render_template("people.html")
 
 
 @app.route("/action", methods=["POST"])
@@ -88,6 +83,11 @@ def schedule():  # will need to use scheduleScrapper to get data first, now it i
                 new_entry = [date, union_name, content, time, SP, MC_AC, venue]
                 event_list.append(new_entry)
     return render_template("schedule.html", event_list=event_list, all_union_names=all_union_names)
+
+
+@app.route("/full-list")
+def full_list():
+    return render_template("fullList.html")
 
 
 if __name__ == "__main__":

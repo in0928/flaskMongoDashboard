@@ -1,17 +1,30 @@
-document.addEventListener("DOMContentLoaded", fill_dropdown(getId()));
-document.querySelector("#table-search").oninput = applySearch;
+//document.addEventListener("DOMContentLoaded", fill_dropdown(tableId));
+
 
 //get tableId
-function getId() {
-    var element = document.querySelector(".table-striped")
-    var id = element.id;
-    return id;
-}
+$(document).ready(function(){
+    var tableId = "people-list";
+    fill_dropdown(tableId);
+    $('.nav-tabs a').on('shown.bs.tab', function(event){
+        var tableLabel = $(event.target).text();
+        switch(tableLabel){
+            case "BA":
+                tableId = "ba-list";
+                break;
+            case "My Dreams":
+                tableId = "dream-list";
+                break;
+            case "Restaurants & Bars":
+                tableId = "restaurants-bars-list";
+                break;
+            default:
+                tableId = "people-list"
+        };
+        fill_dropdown(tableId);
+        });
+    });
 
-tableId = getId();
-//if(tableId === "dream-list"){
-//
-//}
+document.querySelector("#table-search").oninput = applySearch;
 
 function applySearch() {
     search();
@@ -19,14 +32,15 @@ function applySearch() {
 }
 
 
-function fill_dropdown() {
+function fill_dropdown(tableId) {
 //    get col names
-    console.log("i am called")
-    var table = document.getElementsByClassName("table-responsive")[0];
+
+    var table = document.getElementById(tableId);
     var th = table.getElementsByTagName("th");
 //    get dropdown menu
     var dropdown = document.getElementById("search-by-col-name");
-    console.log(dropdown);
+    dropdown.options.length = 0;
+
     for(i = 0; i < th.length; i++) {
         opt = document.createElement("option")
         opt.appendChild(document.createTextNode(th[i].innerText))

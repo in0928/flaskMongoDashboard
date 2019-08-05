@@ -162,16 +162,61 @@ Dashboard
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="ba">
-                <h4>Pro</h4>
-                <p>
-                    2. Tabs are helpful to hide or collapse some addtional content.
-                </p>
+                <div class="col-lg-9 col-md-8">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="ba-list">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Friendship</th>
+                                <th>Description</th>
+                                <th>Tags</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for person in ba_list %}
+                            <tr>
+                                <td>{{ person["full-name"] }}</td>
+                                <td>{{ person["age"] }}</td>
+                                <td>{{ person["gender"] }}</td>
+                                <td>{{ person["status"] }}</td>
+                                <td>{{ person["description"] }}</td>
+                                <td>{{ person["tags"] }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+
             <div role="tabpanel" class="tab-pane" id="my-dreams">
-                <h4>Messages</h4>
-                <p>
-                    3. You can really put whatever you want into the tab pane.
-                </p>
+                <div class="col-lg-9 col-md-8">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="dream-list">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Number</th>
+                                <th>Content</th>
+                                <th>License</th>
+                                <th>When</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for person in people_list %}
+                            <tr>
+                                <td>{{ person["full-name"] }}</td>
+                                <td>{{ person["age"] }}</td>
+                                <td>{{ person["gender"] }}</td>
+                                <td>{{ person["status"] }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="restaurants-bars">
                 <h4>Settings</h4>

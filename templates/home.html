@@ -167,119 +167,7 @@
             </li>
         </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <br>
-            <!--            search function-->
-            <div class="header">
-                <p>コラムを選択
-                    <select id="search-by-col-name">
-                    </select></p>
-                <input class="search" id="table-search" placeholder="Enter text to search">
-                <p class="hovertool"><u>表示のロジックについて</u>
-                    <span class="hiddentext">*この表は簡易表示であり、重要な項目しか表示されていません。フルリストはメニューの"View Full List"からアクセスしてください<br>
-                        **お気に入りと最新の10人しか表示されません<br>
-                        ***まだお気に入りの機能はありません
-            </span>
-                </p>
-            </div>
 
-
-            <div role="tabpanel" class="tab-pane active" id="people">
-                <div class="col-lg-9 col-md-8">
-                    <div class="table-responsive">
-                        <table class="table table-striped" id="people-list">
-
-                            <thead class="thead-inverse">
-                            <tr>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Gender</th>
-                                <th>Status</th>
-                                <th>Description</th>
-                                <th>Tags</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for person in people_list %}
-                            <tr>
-                                <td>{{ person["full-name"] }}</td>
-                                <td>{{ person["age"] }}</td>
-                                <td>{{ person["gender"] }}</td>
-                                <td>{{ person["status"] }}</td>
-                                <td>{{ person["description"] }}</td>
-                                <td>{{ person["tags"] }}</td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="ba">
-                <div class="col-lg-9 col-md-8">
-                    <div class="table-responsive">
-                        <table class="table table-striped" id="ba-list">
-                            <thead class="thead-inverse">
-                            <tr>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Gender</th>
-                                <th>Friendship</th>
-                                <th>Description</th>
-                                <th>Tags</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for person in ba_list %}
-                            <tr>
-                                <td>{{ person["full-name"] }}</td>
-                                <td>{{ person["age"] }}</td>
-                                <td>{{ person["gender"] }}</td>
-                                <td>{{ person["status"] }}</td>
-                                <td>{{ person["description"] }}</td>
-                                <td>{{ person["tags"] }}</td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane" id="dreams">
-                <div class="col-lg-9 col-md-8">
-                    <div class="table-responsive">
-                        <table class="table table-striped" id="dreams-list">
-                            <thead class="thead-inverse">
-                            <tr>
-                                <th>Number</th>
-                                <th>Content</th>
-                                <th>License</th>
-                                <th>When</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for person in people_list %}
-                            <tr>
-                                <td>{{ person["full-name"] }}</td>
-                                <td>{{ person["age"] }}</td>
-                                <td>{{ person["gender"] }}</td>
-                                <td>{{ person["status"] }}</td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="places">
-                <h4>Settings</h4>
-                <p>
-                    4. Some of the Bootstrap 3.x components like well and panel have been dropped for the new card
-                    component.
-                </p>
-            </div>
         </div>
     </div>
 
@@ -584,5 +472,6 @@
 {% endblock %}
 
 {% block script %}
-<script src="{{ url_for('static', filename='js/tabTableSearch.js') }}"></script>
+<!--TODO: fix tabTableSearch.js-->
+<!--<script src="{{ url_for('static', filename='js/tabTableSearch.js') }}"></script>-->
 {% endblock %}

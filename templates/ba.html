@@ -1,0 +1,50 @@
+{% extends 'tableTemplate.html' %}
+
+{% block title %}
+{{ t_ba }}
+{% endblock %}
+
+{% block table %}
+    <table class="table table-striped" id="ba-list-full">
+        <thead class="thead-inverse">
+                <tr>
+                    <th>名前</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>ステータス</th>
+                    <th>印象・メモ</th>
+                    <th>性格</th>
+                    <th>ニーズタグ</th>
+                    <th>関係</th>
+                    <th>職業</th>
+                    <th>会社名</th>
+                    <th>勤務地</th>
+                    <th>住まい</th>
+                    <th>向上心</th>
+                    <th>きっかけ</th>
+                </tr>
+                </thead>
+                {% for person in people_list %}
+                <tr>
+                    <th style="background: white;">{{ person["名前"] }}</th>
+                    <td>{{ person["年齢"] }}</td>
+                    <td>{{ person["性別"] }}</td>
+                    <td>{{ person["ステータス"] }}</td>
+                    <td>{{ person["印象・メモ"] }}</td>
+                    <td>{{ person["性格"] }}</td>
+                    <td>{{ person["ニーズタグ"] }}</td>
+                    <td>{{ person["関係"] }}</td>
+                    <td>{{ person["職業"] }}</td>
+                    <td>{{ person["会社名"] }}</td>
+                    <td>{{ person["勤務地"] }}</td>
+                    <td>{{ person["住まい"] }}</td>
+                    <td>{{ person["向上心"] }}</td>
+                    <td>{{ person["知り合ったきっかけ"] }}</td>
+                </tr>
+                {% endfor %}
+                <tbody>
+                </tbody>
+            </table>
+
+
+{% endblock %}

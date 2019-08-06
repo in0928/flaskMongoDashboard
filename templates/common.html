@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap 4 Dashboard</title>
+    <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="A Bootstrap 4 admin dashboard theme that will get you started. The sidebar toggles off-canvas on smaller screens. This example also include large stat blocks, modal and cards. The top navbar is controlled by a separate hamburger toggle button." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -20,7 +20,7 @@
         <button type="button" class="navbar-toggler mr-2 " data-toggle="offcanvas" title="Toggle responsive left sidebar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#" title="Free Bootstrap 4 Admin Template">Dashboard</a>
+        <a class="navbar-brand" href="{{ url_for('home') }}" title="Free Bootstrap 4 Admin Template">Dashboard</a>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,16 @@
                 <a class="nav-link" href="//www.codeply.com">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//www.codeply.com">Links</a>
+                 <div class="nav-dropdown-wrapper">
+                <a class="nav-link nav-dropdown" href="">Links▾</a>
+<!--                TODO: This needs to be fixed-->
+                <div class="dropdown-content">
+                        <a class="nav-link" href="">ニュースキンHP</a>
+<!--                       <li class="nav-item"><a class="nav-link" href="">ニュースキンHP</a></li>-->
+<!--                       <li class="nav-item"><a class="nav-link" href="">COM</a></li>-->
+<!--                       <li class="nav-item"><a class="nav-link" href="">Placeholder</a></li>-->
+                </div>
+                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="//www.codeply.com">Contact</a>
@@ -58,7 +67,7 @@
                     <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Full Lists▾</a>
                     <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">
                        <li class="nav-item"><a class="nav-link" href="{{ url_for('people') }}">People List</a></li>
-                       <li class="nav-item"><a class="nav-link" href="">BA List</a></li>
+                       <li class="nav-item"><a class="nav-link" href="{{ url_for('ba') }}">BA List</a></li>
                        <li class="nav-item"><a class="nav-link" href="">Dream List</a></li>
                        <li class="nav-item"><a class="nav-link" href="">Place List</a></li>
                     </ul>

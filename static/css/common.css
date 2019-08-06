@@ -89,11 +89,37 @@ div.header span{
 box-shadow: 1px 1px 10px 1px #8f8f8f;
 }
 
-.hovertool:hover .hiddentext {
-  visibility: visible;
+
+/*from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp*/
+.nav-dropdown-wrapper {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 
+/* Show the dropdown menu on hover */
+.nav-dropdown-wrapper:hover .dropdown-content {
+  display: block;
+}
 
 /*
  * Off Canvas sidebar at medium breakpoint

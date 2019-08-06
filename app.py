@@ -19,9 +19,10 @@ ba_test = collections[3]
 
 @app.route("/")
 def home():
+    t = "My Dashboard"
     people_list = people_test.find()
     ba_list = ba_test.find()
-    return render_template("home.html", people_list=people_list, ba_list = ba_list)
+    return render_template("home.html", people_list=people_list, ba_list = ba_list, t_home=t)
 
 
 @app.route("/form")
@@ -55,6 +56,7 @@ def submitted():
 @app.route("/schedule")
 def schedule():  # will need to use scheduleScrapper to get data first, now it is working cuz there are data in DB
     # all_union_names = ss.get_unions() # This is used to update union names
+    t = "Monthly Schudule Scrapped from COM"
     all_unions = union_test.find({})
     all_union_names = []
     for union in all_unions:
@@ -82,12 +84,20 @@ def schedule():  # will need to use scheduleScrapper to get data first, now it i
             else:
                 new_entry = [date, union_name, content, time, SP, MC_AC, venue]
                 event_list.append(new_entry)
-    return render_template("schedule.html", event_list=event_list, all_union_names=all_union_names)
+    return render_template("schedule.html", event_list=event_list, all_union_names=all_union_names, t_schedule=t)
 
 
 @app.route("/people")
 def people():
-    return render_template("people.html")
+    t = "People List"
+    people_list = people_test.find()
+    return render_template("people.html", people_list=people_list, t_people=t)
+
+@app.route("/ba")
+def ba():
+    t = "BA List"
+    people_list = people_test.find()
+    return render_template("ba.html", people_list=people_list, t_ba=t)
 
 
 if __name__ == "__main__":

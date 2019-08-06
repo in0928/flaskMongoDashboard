@@ -64,6 +64,7 @@ p.hovertool {
     color: cornflowerblue;
     text-align: center;
     position: relative;
+    z-index: 2;
 }
 
 .hiddentext {
@@ -80,7 +81,7 @@ p.hovertool {
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  top: -20px;
+  top: -12px;
   right: 100%;
 }
 

@@ -16,8 +16,8 @@ td {
     min-width: 110px;
 }
 
-th {
-    min-width: 80px;
+td.wide-col {
+    min-width: 180px;
 }
 
 .table td, .table th {
@@ -47,6 +47,11 @@ table tr th{
 /*so that the word will not come out of the top when scrolling*/
       outline: 1px solid antiquewhite;
       outline-offset: -1px;
+}
+
+th.freeze-col {
+     background: white;
+     font-weight: normal;
 }
 
 /*css for search bar*/

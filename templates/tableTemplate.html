@@ -14,7 +14,7 @@
     <div class="header">
         <p class="search">検索するコラムを選択
             <select id="search-by-col-name"></select></p>
-        <input class="search" id="table-search" placeholder="検索したい文字を入力">
+        <input class="search" id="table-search" placeholder="検索したい文字列を入力">
         <p class="hovertool"><u>表示のロジックについて</u>
             <span class="hiddentext">*まだお気に入りの機能はありません<br>
                         **本ページはパソコンでの閲覧をお勧めします<br>
@@ -28,8 +28,9 @@
             {% endblock %}
         </div>
     </div>
-    {% block script %}
-    <script src="{{ url_for('static', filename='js/fullTableSearch.js') }}"></script>
+
     {% endblock %}
 
+    {% block script %}
+    <script src="{{ url_for('static', filename='js/fullTableSearch.js') }}"></script>
     {% endblock %}

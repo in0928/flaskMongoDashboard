@@ -10,130 +10,150 @@ Form
 
 {% block body %}
 <div class="col main pt-5 mt-3">
-    <div class="card card-default card-body">
-        <ul id="tabsJustified" class="nav nav-tabs nav-justified">
-            <li class="nav-item">
-                <a class="nav-link" href="" data-target="#tab1" data-toggle="tab">People</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="" data-target="#tab2" data-toggle="tab">BA</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-target="#tab3" data-toggle="tab">My Dreams</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-target="#resBars" data-toggle="tab">Restaurants & Bars</a>
-            </li>
-        </ul>
-        <!--/tabs-->
-        <br>
-        <div id="tabsJustifiedContent" class="tab-content">
-            <div class="tab-pane" id="tab1">
-                <form class="form-basic" method="post" action="{{ url_for('action') }}">
+    <br>
+    <form class="form-basic" method="post" action="{{ url_for('action') }}">
 
-                    <div class="form-title-row">
-                        <h1>New Contact</h1>
-                    </div>
-
-                    <div class="form-row">
-                        <label>Full name</label>
-                        <input type="text" name="full-name" placeholder="LastName FirstName">
-                    </div>
-
-                    <div class="form-row">
-                        <label>Age</label>
-                        <input type="text" name="age">
-                    </div>
-
-                    <div class="form-row">
-                        <label>Gender</label>
-                        <div class="form-radio-buttons">
-                            <label>
-                                <input type="radio" name="gender" value="male">
-                                <span>Male</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="gender" value="female">
-                                <span>Female</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="gender" value="other">
-                                <span>Other</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <label>Status</label>
-                        <select name="status">
-                            <option>Just Met</option>
-                            <option>Friends</option>
-                            <option>BPR Done</option>
-                            <option>SPR Done</option>
-                        </select>
-                    </div>
-
-                    <div class="form-row">
-                        <label>Description</label>
-                        <textarea name="description"></textarea>
-                    </div>
-
-                    <!--in case I need a checkbox-->
-                    <!--        <div class="form-row">-->
-                    <!--            <label>Enter more details</label>-->
-                    <!--            <input type="checkbox" name="checkbox" checked>-->
-                    <!--        </div>-->
-
-                    <div class="form-row">
-                        <label>Extra Something</label>
-                        <input type="text" name="undecided">
-                    </div>
-
-                    <div class="form-row">
-                        <button type="submit">Submit Form</button>
-                    </div>
-                </form>
-
+        <div class="form-title-row">
+            <h1>New Contact</h1>
+        </div>
+        <div class="form-row list-selection"><label>追加先のリストを選択してください</label>
+            <div class="form-radio-buttons">
+                <label>
+                    <input type="radio" name="submit-to-list" value="people-list">
+                    <span>People List</span>
+                </label>
+                <label>
+                    <input type="radio" name="submit-to-list" value="ba-list">
+                    <span>BA List</span>
+                </label>
             </div>
-            <div class="tab-pane active" id="tab2">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <h4>Profile Section</h4>
-                        <p>Imagine creating this simple user profile inside a tab card.</p>
-                    </div>
-                    <div class="col-sm-5"><img src="//placehold.it/170"
-                                               class="float-right img-responsive img-rounded"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-row">
+                    <p class="category"> 基本項目 </p>
                 </div>
-                <hr>
-                <a href="javascript:;" class="btn btn-info btn-block">Read More Profiles</a>
-                <div class="spacer5"></div>
+                <div class="form-row">
+                    <label>名前</label>
+                    <input type="text" name="full-name">
+                </div>
+
+                <div class="form-row">
+                    <label>年齢</label>
+                    <input type="text" name="age">
+                </div>
+
+                <div class="form-row">
+                    <label>性別</label>
+                    <div class="form-radio-buttons">
+                        <label>
+                            <input type="radio" name="gender" value="male">
+                            <span>男</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            <span>女</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other">
+                            <span>その他</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>状態</label>
+                    <select name="status" id="status-dropdown" onchange="otherCheck(this)">
+                        <option>会ったばかり</option>
+                        <option>知人</option>
+                        <option>友人</option>
+                        <option>BPR済み</option>
+                        <option>SPR済み</option>
+                        <option>RP済み</option>
+                        <option>Placeholder1</option>
+                        <option>Placeholder2</option>
+                        <option value="others" id="status-others">その他</option>
+                    </select>
+                </div>
+                <div class="form-row" id="input-status">
+                    <label>状態を入力</label>
+                    <input type="text" name="status">
+                </div>
+
+                <div class="form-row">
+                    <label>印象・メモ</label>
+                    <textarea name="description"></textarea>
+                </div>
+
+                <!--in case I need a checkbox-->
+                <!--        <div class="form-row">-->
+                <!--            <label>Enter more details</label>-->
+                <!--            <input type="checkbox" name="checkbox" checked>-->
+                <!--        </div>-->
+
+                <div class="form-row">
+                    <label>ニーズ</label>
+                    <input type="text" name="needs">
+                </div>
+                <!--                   looks nicer with a new line when displayed on mobile-->
+                <div class="form-row"><br></div>
+
+
             </div>
-            <div class="tab-pane" id="tab3">
-                <div class="list-group">
-                    <a href="" class="list-group-item"><span
-                            class="float-right label label-info label-pill">44</span> <code>.panel</code> is now
-                        <code>.card</code></a>
-                    <a href="" class="list-group-item"><span
-                            class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>
-                        is deprecated</a>
-                    <a href="" class="list-group-item"><span
-                            class="float-right label label-info label-pill">23</span> <code>.badge</code> is now
-                        <code>.label-pill</code></a>
-                    <a href="" class="list-group-item text-muted">Message n..</a>
+            <div class="col-sm-6">
+                <div class="form-row"><p class="category">
+                     追加項目
+                </p>
+                </div>
+                <div class="form-row">
+                    <label>性格</label>
+                    <input type="text" name="character">
+                </div>
+                <div class="form-row">
+                    <label>親しさ</label>
+                    <input type="text" name="relation">
+                </div>
+                <div class="form-row">
+                    <label>親しさ</label>
+                    <select name="relation">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>会社</label>
+                    <input type="text" name="undecided">
+                </div>
+                <div class="form-row">
+                    <label>勤務地</label>
+                    <input type="text" name="undecided">
+                </div>
+                <div class="form-row">
+                    <label>住まい</label>
+                    <input type="text" name="undecided">
+                </div>
+                <div class="form-row">
+                    <label>出身地</label>
+                    <input type="text" name="undecided">
+                </div>
+                <div class="form-row">
+                    <label>きっかけ</label>
+                    <input type="text" name="source" placeholder="知り合ったきっかけ">
                 </div>
             </div>
         </div>
-        <!--/tabs content-->
-    </div><!--/card-->
+        <div class="form-row">
+            <button type="submit">保存</button>
+        </div>
+    </form>
+
+
 </div><!--/col-->
+{% endblock %}
 
-<!--/col-->
-</div><!--/row-->
-
-</div>
-<!--/main col-->
-</div>
-
-
-</div>
+{% block script%}
+    <script src="{{ url_for('static', filename='js/hiddenInput.js') }}"></script>
 {% endblock %}

@@ -89,6 +89,10 @@ div.header span{
 box-shadow: 1px 1px 10px 1px #8f8f8f;
 }
 
+p.hovertool:hover .hiddentext {
+    visibility:visible;
+}
+
 
 /*from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp*/
 .nav-dropdown-wrapper {

@@ -12,4 +12,6 @@ def connect_mongo():
     place_test = db.placeTest
     my_dlines_test = db.myDlinesTest #TODO: add d-lines management someday
     users_test = db.usersTest  #TODO: add user management someday
-    return people_test, schedule_test, union_test, ba_test, my_dreams_test, place_test, my_dlines_test, users_test
+    fav_people = db.favPeople
+    fav_ba = db.favBA
+    return people_test, schedule_test, union_test, ba_test, my_dreams_test, place_test, my_dlines_test, users_test, fav_people, fav_ba

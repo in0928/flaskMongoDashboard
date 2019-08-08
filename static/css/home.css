@@ -24,3 +24,28 @@ div.header #search-by-col-name{
     min-width: 30%;
 }
 
+div.card div.card-body .card-title, .card-subtitle {
+    display: inline-block;
+    font-weight:bold;
+}
+
+div.card div.card-body .card-title {
+    max-width:55%
+}
+
+div.card div.card-body .card-subtitle {
+    float:right;
+    font-style: italic;
+    max-width:45%;
+    font-size:12px;
+    text-align: right;
+}
+
+#people div.card {
+    background: lightgoldenrodyellow;
+}
+
+
+#ba div.card {
+    background: lightblue;
+}

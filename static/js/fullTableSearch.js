@@ -12,6 +12,9 @@ function getTableId() {
         case "/places":
             tableId = "place-list-full";
             break;
+        case "/schedule":
+            tableId = "com-schedule";
+            break;
         default:
             tableId = "people-list-full"
     };
@@ -59,11 +62,16 @@ function search(tableId) {
     var th = thead.getElementsByTagName("th");
     var dropdown = document.getElementById("search-by-col-name");
     var index = dropdown.selectedIndex;
+    if (tableId == "ba-list-full" || tableId == "people-list-full"){
+            index = index - 1;
+    }
+             console.log(index);
 
 
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 1; i < tr.length; i++) {
 //        Special case
+
         if(dropdown.value === "名前"){　
            th = tr[i].getElementsByTagName("th")[0];
            txtValue = th.innerText;
@@ -74,8 +82,7 @@ function search(tableId) {
                 }
         }
         else {
-            td = tr[i].getElementsByTagName("td")[index-1];
-            console.log(td);
+            td = tr[i].getElementsByTagName("td")[index];
             if (td) {
                 txtValue = td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {

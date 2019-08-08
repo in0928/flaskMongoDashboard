@@ -8,21 +8,23 @@
 
 {% block body %}
 
+
+
 <div class="col main pt-5 mt-3">
     <br>
     <!--            search function-->
     <div class="header">
+        <h2>{{ t }}</h2>
         <p class="search">検索するコラムを選択
             <select id="search-by-col-name"></select></p>
         <input class="search" id="table-search" placeholder="検索したい文字列を入力">
-        <p class="hovertool"><u>表示のロジックについて</u>
-            <span class="hiddentext">*まだお気に入りの機能はありません<br>
-                        **本ページはパソコンでの閲覧をお勧めします<br>
-                        ***コラムを指定すると、検索することができます
+        <p class="hovertool"><u>使い方ヒント</u>
+            <span class="hiddentext">*コラムを指定すると、検索することができます<br>
+                        **本ページはパソコンでの閲覧をお勧めします
                     </span>
         </p>
     </div>
-    <div class="col-lg-9 col-md-8">
+    <div class="col-lg-9 col-md-8" style="max-width:100%;">
         <div class="table-responsive">
             {% block table %}
             {% endblock %}

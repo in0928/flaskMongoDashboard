@@ -4,7 +4,7 @@ from difflib import SequenceMatcher
 def merge_rows(cursor):
     new_list = []
     for item in cursor:
-        new_list.append(item)
+        new_list.append(item) # a list of dics
 
     for i in range(len(new_list)):
         e1 = new_list[i]  # use the first entry as standard
@@ -31,7 +31,7 @@ def merge_rows(cursor):
         for index in indice_of_duplicates:
             name = new_list[index]["union_name"]
             names.append(name)
-            new_list[index]["content"] = "Invisible"  # set content so the if clause in app.py will filter the duplicates out
+            new_list[index]["content"] = "Invisible"  # cannot set to "", will cause problem
 
         new_name = ", ".join(names)  # should be like "A, B, C"
         e1["union_name"] = new_name

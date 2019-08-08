@@ -15,6 +15,8 @@ people_test = collections[0]
 schedule_test = collections[1]
 union_test = collections[2]
 ba_test = collections[3]
+fav_people = collections[8]
+fav_ba = collections[9]
 
 
 @app.route("/")
@@ -22,7 +24,9 @@ def home():
     t = "My Dashboard"
     people_list = people_test.find()
     ba_list = ba_test.find()
-    return render_template("home.html", people_list=people_list, ba_list = ba_list, t_home=t)
+    fav_people_list = fav_people.find()
+    fav_ba_list = fav_ba.find()
+    return render_template("home.html", people_list=people_list, ba_list = ba_list, fav_people_list=fav_people_list, fav_ba_list=fav_ba_list, t=t)
 
 
 @app.route("/form")
@@ -54,13 +58,8 @@ def submitted():
     return render_template("submitted.html")
 
 @app.route("/schedule")
-def schedule():  # will need to use scheduleScrapper to get data first, now it is working cuz there are data in DB
-    # all_union_names = ss.get_unions() # This is used to update union names
+def schedule():
     t = "Monthly Schudule Scrapped from COM"
-    all_unions = union_test.find({})
-    all_union_names = []
-    for union in all_unions:
-        all_union_names.append(union["union-name"])
 
     month_date = ["8."]*31
     for i in range(31):
@@ -71,33 +70,26 @@ def schedule():  # will need to use scheduleScrapper to get data first, now it i
     for day in month_date:
         aug_events = schedule_test.find({"date": day})
         merged = ds.merge_rows(aug_events)
-        for item in merged:
-            content = item["content"]
-            date = item["date"]
-            union_name = item["union_name"]
-            time = item["time"]
-            SP = item["SP"]
-            MC_AC = item["MC_AC"]
-            venue = item["venue"]
-            if content == "" or content == "Invisible":  # not show groups with no events
+
+        for i in merged:
+            if i["content"] == "" or i["content"] == "Invisible":  # not show groups with no events
                 continue
             else:
-                new_entry = [date, union_name, content, time, SP, MC_AC, venue]
-                event_list.append(new_entry)
-    return render_template("schedule.html", event_list=event_list, all_union_names=all_union_names, t_schedule=t)
+                event_list.append(i)
+    return render_template("schedule.html", event_list=event_list, t=t)
 
 
 @app.route("/people")
 def people():
     t = "People List"
     people_list = people_test.find()
-    return render_template("people.html", people_list=people_list, t_people=t)
+    return render_template("people.html", people_list=people_list, t=t)
 
 @app.route("/ba")
 def ba():
     t = "BA List"
     people_list = people_test.find()
-    return render_template("ba.html", people_list=people_list, t_ba=t)
+    return render_template("ba.html", people_list=people_list, t=t)
 
 
 if __name__ == "__main__":

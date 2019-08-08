@@ -1,7 +1,7 @@
 {% extends 'tableTemplate.html' %}
 
 {% block title %}
-{{ t_people }}
+{{ t }}
 {% endblock %}
 
 {% block table %}
@@ -13,8 +13,8 @@
                     <th>性別</th>
                     <th>状態</th>
                     <th>印象・メモ</th>
-                    <th>性格</th>
                     <th>ニーズ</th>
+                    <th>性格</th>
                     <th>親しさ</th>
                     <th>職業</th>
                     <th>会社名</th>
@@ -26,6 +26,7 @@
                 </tr>
                 </thead>
                 {% for person in people_list %}
+        <tbody>
                 <tr>
                     <th class="freeze-col">{{ person["名前"] }}</th>
                     <td>{{ person["年齢"] }}</td>
@@ -44,7 +45,7 @@
                     <td>{{ person["きっかけ"] }}</td>
                 </tr>
                 {% endfor %}
-                <tbody>
+
                 </tbody>
             </table>
 

@@ -47,5 +47,14 @@ div.card div.card-body .card-subtitle {
 
 
 #ba div.card {
-    background: lightblue;
+    background: rgb(240, 248, 255);
+}
+
+#notes div.card {
+    background: palegoldenrod;
+}
+
+.star {
+  font-size: 25px;
+	color:gold;
 }

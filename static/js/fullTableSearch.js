@@ -62,6 +62,7 @@ function search(tableId) {
     var th = thead.getElementsByTagName("th");
     var dropdown = document.getElementById("search-by-col-name");
     var index = dropdown.selectedIndex;
+//    Because the first col is frozen
     if (tableId == "ba-list-full" || tableId == "people-list-full"){
             index = index - 1;
     }

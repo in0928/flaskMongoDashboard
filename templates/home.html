@@ -10,6 +10,8 @@
 
 {% block body %}
 <div class="col main pt-5 mt-3">
+      <div>
+                                <span class="star glyphicon glyphicon-star-empty"></span></div>
     <h1 class="display-4 d-none d-sm-block">
         My Dashboard
     </h1>
@@ -100,7 +102,7 @@
         <div class="card card-default card-body">
             <ul id="tabsJustified" class="nav nav-tabs nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link active" href="" data-target="#people" data-toggle="tab"> Hot People</a>
+                    <a class="nav-link active" href="" data-target="#people" data-toggle="tab">Hot People</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="" data-target="#ba" data-toggle="tab">Reliable BAs</a>
@@ -114,13 +116,17 @@
             <div id="tabsJustifiedContent" class="tab-content">
                 <div class="tab-pane active" id="people">
                     <div class="card-columns mb-3">
-                        {% for fav_person in fav_people_list %}
+
+                        {% for person in fav_people_list %}
                         <div class="card">
+
                             <div class="card-body">
-                                <h5 class="card-title">{{ fav_person["name"] }}</h5>
-                                <h6 class="card-subtitle">{{ fav_person["status"] }}</h6>
-                                <p class="card-text">{{ fav_person["description"] }}</p>
-                                <p class="card-text">{{ fav_person["tags"] }}</p>
+
+
+                                <h5 class="card-title">{{ person["full-name"] }}</h5>
+                                <h6 class="card-subtitle">{{ person["status"] }}</h6>
+                                <p class="card-text">{{ person["description"] }}</p>
+                                <p class="card-text">{{ person["tags"] }}</p>
                                 <p class="card-text">
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </p>
@@ -131,13 +137,13 @@
                 </div>
                 <div class="tab-pane" id="ba">
                     <div class="card-columns mb-3">
-                        {% for fav_ba in fav_ba_list %}
+                        {% for ba in fav_ba_list %}
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">{{ fav_ba["name"] }}</h4>
-                                <h6 class="card-subtitle">{{ fav_ba["relation"] }}</h6>
-                                <p class="card-text">{{ fav_ba["description"] }}</p>
-                                <p class="card-text">{{ fav_ba["tags"] }}</p>
+                                <h4 class="card-title">{{ ba["full-name"] }}</h4>
+                                <h6 class="card-subtitle">{{ ba["relation"] }}</h6>
+                                <p class="card-text">{{ ba["description"] }}</p>
+                                <p class="card-text">{{ ba["tags"] }}</p>
                                 <p class="card-text">
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </p>
@@ -147,17 +153,19 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="notes">
-                    <div class="list-group">
-                        <a href="" class="list-group-item"><span
-                                class="float-right label label-info label-pill">44</span> <code>.panel</code> is now
-                            <code>.card</code></a>
-                        <a href="" class="list-group-item"><span
-                                class="float-right label label-info label-pill">8</span> <code>.nav-justified</code>
-                            is deprecated</a>
-                        <a href="" class="list-group-item"><span
-                                class="float-right label label-info label-pill">23</span> <code>.badge</code> is now
-                            <code>.label-pill</code></a>
-                        <a href="" class="list-group-item text-muted">Message n..</a>
+                    <div class="card-columns mb-3">
+                        {% for note in fav_notes_list %}
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ note["title"] }}</h4>
+                                <h6 class="card-subtitle">{{ note["category"] }}</h6>
+                                <p class="card-text">{{ note["content"] }}</p>
+                                <p class="card-text">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

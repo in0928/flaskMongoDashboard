@@ -2,9 +2,9 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for  # For flask implementation
 from bson import ObjectId  # For ObjectId to work
 from pymongo import MongoClient
-import scheduleScrapper as ss
 import displaySchedule as ds
 import mongoDBConnector
+from bs4 import BeautifulSoup as bs
 
 app = Flask(__name__)
 title = "Sample form submission with MongoDB"
@@ -15,8 +15,16 @@ people_test = collections[0]
 schedule_test = collections[1]
 union_test = collections[2]
 ba_test = collections[3]
-fav_people = collections[8]
-fav_ba = collections[9]
+my_dreams_test = collections[4]
+place_test = collections[5]
+my_dlines_test = collections[6]
+users_test = collections[7]
+notes_test = collections[8]
+
+
+def add_favorite(cursor, this):
+    text = bs(this).text
+    # cursor.find_one_and_update( $and: [{"full-name": text}, {"description": desc}], {$set})
 
 
 @app.route("/")
@@ -24,9 +32,11 @@ def home():
     t = "My Dashboard"
     people_list = people_test.find()
     ba_list = ba_test.find()
-    fav_people_list = fav_people.find()
-    fav_ba_list = fav_ba.find()
-    return render_template("home.html", people_list=people_list, ba_list = ba_list, fav_people_list=fav_people_list, fav_ba_list=fav_ba_list, t=t)
+    fav_people_list = people_test.find({"favorite": "True"})
+    fav_ba_list = ba_test.find({"favorite": "True"})
+    fav_notes_list = notes_test.find({"favorite": "True"})
+    return render_template("home.html", people_list=people_list, ba_list=ba_list,\
+                           fav_people_list=fav_people_list, fav_ba_list=fav_ba_list, fav_notes_list=fav_notes_list, t=t)
 
 
 @app.route("/form")
@@ -88,8 +98,8 @@ def people():
 @app.route("/ba")
 def ba():
     t = "BA List"
-    people_list = people_test.find()
-    return render_template("ba.html", people_list=people_list, t=t)
+    ba_list = ba_test.find()
+    return render_template("ba.html", ba_list=ba_list, t=t)
 
 
 if __name__ == "__main__":

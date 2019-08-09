@@ -13,7 +13,7 @@
                     <th>性別</th>
                     <th>状態</th>
                     <th>印象・メモ</th>
-                    <th>ニーズ</th>
+                    <th>タグ</th>
                     <th>性格</th>
                     <th>親しさ</th>
                     <th>職業</th>
@@ -25,24 +25,25 @@
                     <th>きっかけ</th>
                 </tr>
                 </thead>
-                {% for person in people_list %}
+
         <tbody>
+                        {% for person in people_list %}
                 <tr>
-                    <th class="freeze-col">{{ person["名前"] }}</th>
-                    <td>{{ person["年齢"] }}</td>
-                    <td>{{ person["性別"] }}</td>
-                    <td>{{ person["状態"] }}</td>
-                    <td class="wide-col">{{ person["印象・メモ"] }}</td>
-                    <td>{{ person["ニーズ"] }}</td>
-                    <td>{{ person["性格"] }}</td>
-                    <td>{{ person["親しさ"] }}</td>
-                    <td>{{ person["職業"] }}</td>
-                    <td>{{ person["会社名"] }}</td>
-                    <td>{{ person["勤務地"] }}</td>
-                    <td>{{ person["住まい"] }}</td>
-                    <td>{{ person["出身地"] }}</td>
-                    <td>{{ person["向上心"] }}</td>
-                    <td>{{ person["きっかけ"] }}</td>
+                    <th class="freeze-col">{{ person["full-name"] }}</th>
+                    <td>{{ person["age"] }}</td>
+                    <td>{{ person["gender"] }}</td>
+                    <td>{{ person["status"] }}</td>
+                    <td class="wide-col">{{ person["description"] }}</td>
+                    <td>{{ person["tag"] }}</td>
+                    <td>{{ person["character"] }}</td>
+                    <td>{{ person["friendship"] }}</td>
+                    <td>{{ person["job"] }}</td>
+                    <td>{{ person["company"] }}</td>
+                    <td>{{ person["company-location"] }}</td>
+                    <td>{{ person["home"] }}</td>
+                    <td>{{ person["hometown"] }}</td>
+                    <td>{{ person["ambition"] }}</td>
+                    <td>{{ person["source"] }}</td>
                 </tr>
                 {% endfor %}
 

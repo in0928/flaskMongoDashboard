@@ -58,3 +58,18 @@ div.card div.card-body .card-subtitle {
   font-size: 25px;
 	color:gold;
 }
+
+/*
+span.favorite:hover:before {
+   content: "\2606";
+   position: absolute;
+}*/
+
+span.favorite:before {
+   content: "\2605";
+}
+
+span.non-favorite:before {
+   content: "\2606";
+}
+

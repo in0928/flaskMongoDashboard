@@ -3,23 +3,23 @@ from flask import Flask, render_template, request, redirect, url_for  # For flas
 from bson import ObjectId  # For ObjectId to work
 from pymongo import MongoClient
 import displaySchedule as ds
-import mongoDBConnector
+from mongoDBConnector import PyMongo
 from bs4 import BeautifulSoup as bs
 
 app = Flask(__name__)
 title = "Sample form submission with MongoDB"
 heading = "Form submission with Flask and MongoDB"
 
-collections = mongoDBConnector.connect_mongo()
-people_test = collections[0]
-schedule_test = collections[1]
-union_test = collections[2]
-ba_test = collections[3]
-my_dreams_test = collections[4]
-place_test = collections[5]
-my_dlines_test = collections[6]
-users_test = collections[7]
-notes_test = collections[8]
+connector = PyMongo()
+people_test = connector.people_test
+schedule_test = connector.schedule_test
+union_test = connector.union_test
+ba_test = connector.ba_test
+my_dreams_test = connector.my_dreams_test
+place_test = connector.place_test
+my_dlines_test = connector.my_dlines_test
+users_test = connector.users_test
+notes_test = connector.notes_test
 
 
 def add_favorite(cursor, this):

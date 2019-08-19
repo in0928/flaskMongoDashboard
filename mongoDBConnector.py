@@ -1,16 +1,17 @@
 from pymongo import MongoClient
 
 
-def connect_mongo():
-    client = MongoClient("mongodb://127.0.0.1:27017")  # host uri
-    db = client.test  # Select the database
-    people_test = db.peopleTest #0
-    schedule_test = db.scheduleTest #1
-    union_test = db.unionTest #2 this is used with schedule
-    ba_test = db.baTest #3
-    my_dreams_test = db.myDreamsTest #4
-    place_test = db.placeTest #5
-    my_dlines_test = db.myDlinesTest #7 TODO: add d-lines management someday
-    users_test = db.usersTest  #7 TODO: add user management someday
-    notes_test = db.notesTest#8
-    return people_test, schedule_test, union_test, ba_test, my_dreams_test, place_test, my_dlines_test, users_test, notes_test
+class PyMongo:
+
+    def __init__(self):
+        self.client = MongoClient("mongodb://127.0.0.1:27017")  # host uri
+        self.db = self.client.test  # Select the database
+        self.people_test = self.db.peopleTest  # 0
+        self.schedule_test = self.db.scheduleTest  # 1
+        self.union_test = self.db.unionTest  # 2 this is used with schedule
+        self.ba_test = self.db.baTest  # 3
+        self.my_dreams_test = self.db.myDreamsTest  # 4
+        self.place_test = self.db.placeTest  # 5
+        self.my_dlines_test = self.db.myDlinesTest  # 7 TODO: add d-lines management someday
+        self.users_test = self.db.usersTest  # 7 TODO: add user management someday
+        self.notes_test = self.db.notesTest  # 8

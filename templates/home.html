@@ -10,8 +10,6 @@
 
 {% block body %}
 <div class="col main pt-5 mt-3">
-      <div>
-                                <span class="star glyphicon glyphicon-star-empty"></span></div>
     <h1 class="display-4 d-none d-sm-block">
         My Dashboard
     </h1>
@@ -119,12 +117,12 @@
 
                         {% for person in fav_people_list %}
                         <div class="card">
-
                             <div class="card-body">
-
-
-                                <h5 class="card-title">{{ person["full-name"] }}</h5>
-                                <h6 class="card-subtitle">{{ person["status"] }}</h6>
+                                <div>
+                                    <h5 class="card-title">{{ person["full-name"] }}</h5>
+                                    <span class="star" onclick="toggleIcon(this)"></span>
+                                    <h6 class="card-subtitle">{{ person["status"] }}</h6>
+                                </div>
                                 <p class="card-text">{{ person["description"] }}</p>
                                 <p class="card-text">{{ person["tags"] }}</p>
                                 <p class="card-text">

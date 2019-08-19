@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", modifyCards());
 
 function modifyCards(){
     colorCards();
-    giveCardId();
+    giveIdClass();
 }
 
 function colorCards(){
@@ -34,10 +34,21 @@ function colorCards(){
 }
 
 
-function giveCardId(){
-    cards = document.getElementsByClassName("card");
-    for(i = 0; i < cards.length; i++){
-        cards[i].setAttribute("id", i)
+function giveIdClass(){
+    var stars = document.getElementsByClassName("star");
+    var cards = document.getElementsByClassName("card");
+    for(i = 0; i < stars.length; i++){
+        var cardId = "card" + i.toString();
+        var starId = "star" + (i+1).toString();
+        cards[i].setAttribute("id", cardId);
+        stars[i].setAttribute("id", starId);
+        stars[i].classList.add("favorite");
     }
-
 }
+
+function toggleIcon(target) {
+    target.classList.toggle('favorite');
+    target.classList.toggle('non-favorite');
+}
+
+

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", modifyCards());
 
 function modifyCards(){
     colorCards();
-    giveIdClass();
+    giveClass();
 }
 
 function colorCards(){
@@ -34,14 +34,10 @@ function colorCards(){
 }
 
 
-function giveIdClass(){
+function giveClass(){
     var stars = document.getElementsByClassName("star");
     var cards = document.getElementsByClassName("card");
     for(i = 0; i < stars.length; i++){
-        var cardId = "card" + i.toString();
-        var starId = "star" + (i+1).toString();
-        cards[i].setAttribute("id", cardId);
-        stars[i].setAttribute("id", starId);
         stars[i].classList.add("favorite");
     }
 }

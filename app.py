@@ -21,11 +21,10 @@ my_dlines_test = connector.my_dlines_test
 users_test = connector.users_test
 notes_test = connector.notes_test
 
-
-def add_favorite(cursor, this):
-    text = bs(this).text
-    # cursor.find_one_and_update( $and: [{"full-name": text}, {"description": desc}], {$set})
-
+@app.route("/s")
+def favorite():
+    print("123333")
+    return ""
 
 @app.route("/")
 def home():

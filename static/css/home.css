@@ -30,7 +30,7 @@ div.card div.card-body .card-title, .card-subtitle {
 }
 
 div.card div.card-body .card-title {
-    max-width:55%
+    max-width:55%;
 }
 
 div.card div.card-body .card-subtitle {
@@ -55,8 +55,8 @@ div.card div.card-body .card-subtitle {
 }
 
 .star {
-  font-size: 25px;
-	color:gold;
+    font-size: 30px;
+    color:gold;
 }
 
 /*
@@ -64,6 +64,13 @@ span.favorite:hover:before {
    content: "\2606";
    position: absolute;
 }*/
+
+button[type=submit] {
+    background:inherit;
+    border:none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+}
 
 span.favorite:before {
    content: "\2605";

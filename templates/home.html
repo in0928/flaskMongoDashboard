@@ -118,16 +118,16 @@
                         {% for person in fav_people_list %}
                         <div class="card">
                             <div class="card-body">
-                                <div>
-                                    <h5 class="card-title">{{ person["full-name"] }}</h5>
-                                    <span class="star" onclick="toggleIcon(this)"></span>
-                                    <h6 class="card-subtitle">{{ person["status"] }}</h6>
-                                </div>
+                                <h5 class="card-title">{{ person["full-name"] }}</h5>
+                                <h6 class="card-subtitle">{{ person["status"] }}</h6>
                                 <p class="card-text">{{ person["description"] }}</p>
                                 <p class="card-text">{{ person["tags"] }}</p>
                                 <p class="card-text">
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </p>
+                                <form action="{{ url_for('favorite') }}" style="display:inline-block; float:right;" id="fav1" method="get">
+                                    <span class="star" onclick="toggleIcon(this); document.querySelector('#fav1').submit()"></span>
+                                </form>
                             </div>
                         </div>
                         {% endfor %}
@@ -138,13 +138,16 @@
                         {% for ba in fav_ba_list %}
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">{{ ba["full-name"] }}</h4>
+                                <h5 class="card-title">{{ ba["full-name"] }}</h5>
                                 <h6 class="card-subtitle">{{ ba["relation"] }}</h6>
                                 <p class="card-text">{{ ba["description"] }}</p>
                                 <p class="card-text">{{ ba["tags"] }}</p>
-                                <p class="card-text">
+                                <p class="card-text" style="display:inline-block;">
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </p>
+                                <form action="" style="display:inline-block; float:right;">
+                                        <span class="star" onclick="toggleIcon(this)"></span>
+                                </form>
                             </div>
                         </div>
                         {% endfor %}
@@ -153,14 +156,16 @@
                 <div class="tab-pane" id="notes">
                     <div class="card-columns mb-3">
                         {% for note in fav_notes_list %}
-                        <div class="card">
+                        <div class="card" id="{{ objectId }}">
                             <div class="card-body">
-                                <h4 class="card-title">{{ note["title"] }}</h4>
-                                <h6 class="card-subtitle">{{ note["category"] }}</h6>
+                                <h5 class="card-title">{{ note["title"] }}</h5>
                                 <p class="card-text">{{ note["content"] }}</p>
                                 <p class="card-text">
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </p>
+                                <form action="" style="display:inline-block; float:right;">
+                                    <span class="star" onclick="toggleIcon(this)"></span>
+                                </form>
                             </div>
                         </div>
                         {% endfor %}

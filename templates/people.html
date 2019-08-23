@@ -23,13 +23,14 @@
                     <th>出身地</th>
                     <th>向上心</th>
                     <th>きっかけ</th>
+                    <th style="display:none;">id</th>
                 </tr>
                 </thead>
 
         <tbody>
                         {% for person in people_list %}
                 <tr>
-                    <th class="freeze-col">{{ person["full-name"] }}</th>
+                    <th class="freeze-col"><a href="./updatepeopleform?_id={{ person['_id'] }}">{{ person["full-name"] }}</a></th>
                     <td>{{ person["age"] }}</td>
                     <td>{{ person["gender"] }}</td>
                     <td>{{ person["status"] }}</td>
@@ -44,6 +45,7 @@
                     <td>{{ person["hometown"] }}</td>
                     <td>{{ person["ambition"] }}</td>
                     <td>{{ person["source"] }}</td>
+                    <td style="display:none;">{{ person['_id'] }}</td>
                 </tr>
                 {% endfor %}
 

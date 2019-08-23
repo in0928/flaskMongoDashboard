@@ -122,12 +122,12 @@
                                 <h6 class="card-subtitle">{{ person["status"] }}</h6>
                                 <p class="card-text">{{ person["description"] }}</p>
                                 <p class="card-text">{{ person["tags"] }}</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                <p class="card-text last-update">
+                                    <small class="text-muted">Last Updated {{ person["last-updated"] }}</small>
                                 </p>
-                                <form action="{{ url_for('favorite') }}" style="display:inline-block; float:right;" id="fav1" method="get">
-                                    <span class="star" onclick="toggleIcon(this); document.querySelector('#fav1').submit()"></span>
-                                </form>
+<!--                                <form method="post" action="" style="display:inline-block; float:right">-->
+<!--                                    <input type="submit" class="star" onclick="toggleIcon(this);"></span>-->
+<!--                                </form>-->
                             </div>
                         </div>
                         {% endfor %}
@@ -143,11 +143,8 @@
                                 <p class="card-text">{{ ba["description"] }}</p>
                                 <p class="card-text">{{ ba["tags"] }}</p>
                                 <p class="card-text" style="display:inline-block;">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">Last Updated {{ ba["last-updated"] }}</small>
                                 </p>
-                                <form action="" style="display:inline-block; float:right;">
-                                        <span class="star" onclick="toggleIcon(this)"></span>
-                                </form>
                             </div>
                         </div>
                         {% endfor %}
@@ -163,9 +160,6 @@
                                 <p class="card-text">
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </p>
-                                <form action="" style="display:inline-block; float:right;">
-                                    <span class="star" onclick="toggleIcon(this)"></span>
-                                </form>
                             </div>
                         </div>
                         {% endfor %}

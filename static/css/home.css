@@ -65,12 +65,6 @@ span.favorite:hover:before {
    position: absolute;
 }*/
 
-button[type=submit] {
-    background:inherit;
-    border:none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-}
 
 span.favorite:before {
    content: "\2605";

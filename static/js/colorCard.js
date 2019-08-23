@@ -47,4 +47,19 @@ function toggleIcon(target) {
     target.classList.toggle('non-favorite');
 }
 
+function sendData(target){
+    var parent = target.parentElement;
+    var favClass = target.className;
+    if(favClass.indexOf("non-favorite") !== -1){
+        var status = "False";
+    } else {
+        var status = "True";
+    }
+    var name = parent.getElementsByClassName("card-title")[0].innerText
+    var desc = parent.getElementsByClassName("card-text")[0].innerText
+    var data = {"full-name": name, "description": desc, "favorite": status};
+    return name;
+//    $.post( "/postmethod", {person: data });
+}
+
 

@@ -1,7 +1,9 @@
+import json
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for  # For flask implementation
 from bson import ObjectId  # For ObjectId to work
 from pymongo import MongoClient
+
 import displaySchedule as ds
 from mongoDBConnector import PyMongo
 from bs4 import BeautifulSoup as bs
@@ -21,10 +23,10 @@ my_dlines_test = connector.my_dlines_test
 users_test = connector.users_test
 notes_test = connector.notes_test
 
-@app.route("/s")
+@app.route("/confirm")
 def favorite():
     print("123333")
-    return ""
+    return redirect("/")
 
 @app.route("/")
 def home():
@@ -42,21 +44,52 @@ def home():
 def form():
     return render_template("form.html")
 
+@app.route("/updatepeopleform")
+def update_form():
+    id = request.values.get("_id")
+    person = people_test.find({"_id": ObjectId(id)})
+    print(person)
+    return render_template("updateForm.html", person=person)
 
-@app.route("/action", methods=["POST"])
-def action():
+@app.route("/submit_form", methods=["POST"])
+def submit_form():
     # get data from form
+    target_list = request.form.get("submit-to-list")
     full_name = request.form.get("full-name")
     age = request.form.get("age")
     gender = request.form.get("gender")
     status = request.form.get("status")
     description = request.form.get("description")
-    people_test.insert_one({
+    needs = request.form.get("needs")
+    character = request.form.get("character")
+    relation = request.form.get("relation")
+    job = request.form.get("job")
+    company = request.form.get("company")
+    company_loc = request.form.get("company-loc")
+    home = request.form.get("home")
+    hometown = request.form.get("hometown")
+    source = request.form.get("source")
+    remarks = request.form.get("remarks")
+    if target_list == "people-list":
+        cursor = people_test
+    else:
+        cursor = ba_test
+    cursor.insert_one({
         "full-name": full_name,
         "age": age,
         "gender": gender,
         "status": status,
         "description": description,
+        "needs": needs,
+        "character": character,
+        "relation": relation,
+        "job": job,
+        "company": company,
+        "company-loc": company_loc,
+        "home": home,
+        "hometown": hometown,
+        "source": source,
+        "remarks": remarks,
         "last-updated": datetime.now()
     })
     return redirect("/submitted")

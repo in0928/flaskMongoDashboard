@@ -11,10 +11,12 @@ Form
 {% block body %}
 <div class="col main pt-5 mt-3">
     <br>
-    <form class="form-basic" method="post" action="{{ url_for('submit_form') }}">
+
+    <form class="form-basic" method="post" action="{{ url_for('update_people_form') }}">
+                    {% for task in person %}
 
         <div class="form-title-row">
-            <h1>New Contact</h1>
+            <h1>Update Existing Contact</h1>
         </div>
         <div class="form-row list-selection"><label>追加先のリストを選択してください</label>
             <div class="form-radio-buttons">
@@ -28,6 +30,7 @@ Form
                 </label>
             </div>
         </div>
+
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-row">
@@ -35,12 +38,12 @@ Form
                 </div>
                 <div class="form-row">
                     <label>名前</label>
-                    <input type="text" name="full-name">
+                    <input type="text" name="full-name" value="{{ task['full-name'] }}">
                 </div>
 
                 <div class="form-row">
                     <label>年齢</label>
-                    <input type="text" name="age">
+                    <input type="text" name="age" placeholder="">
                 </div>
 
                 <div class="form-row">
@@ -60,6 +63,7 @@ Form
                         </label>
                     </div>
                 </div>
+
 
                 <div class="form-row">
                     <label>状態</label>
@@ -153,6 +157,7 @@ Form
             <button type="submit">保存</button>
         </div>
     </form>
+                    {% endfor %}
 
 
 </div><!--/col-->

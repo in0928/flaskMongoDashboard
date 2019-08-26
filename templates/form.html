@@ -16,7 +16,7 @@ Form
         <div class="form-title-row">
             <h1>New Contact</h1>
         </div>
-        <div class="form-row list-selection"><label>追加先のリストを選択してください</label>
+        <div class="form-row form-header1"><label>追加先のリストを選択してください</label>
             <div class="form-radio-buttons">
                 <label>
                     <input type="radio" name="submit-to-list" value="people-list">
@@ -27,7 +27,19 @@ Form
                     <span>BA List</span>
                 </label>
             </div>
+
         </div>
+<div class="form-row form-header2">
+                            <label>Dashboardに表示する</label>
+                            <input type="checkbox" name="fav" checked>
+                        </div>
+
+<!--        <div>-->
+<!--                <label class="switch">-->
+<!--                    <input type="checkbox" checked>-->
+<!--                    <span class="slider round"></span>-->
+<!--                </label>-->
+<!--            </div>-->
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-row">
@@ -77,19 +89,13 @@ Form
                 </div>
                 <div class="form-row" id="input-status">
                     <label>状態を入力</label>
-                    <input type="text" name="status">
+                    <input type="text" name="other-status">
                 </div>
 
                 <div class="form-row">
                     <label>印象・メモ</label>
                     <textarea name="description"></textarea>
                 </div>
-
-                <!--in case I need a checkbox-->
-                <!--        <div class="form-row">-->
-                <!--            <label>Enter more details</label>-->
-                <!--            <input type="checkbox" name="checkbox" checked>-->
-                <!--        </div>-->
 
                 <div class="form-row">
                     <label>ニーズ</label>
@@ -102,7 +108,7 @@ Form
             </div>
             <div class="col-sm-6">
                 <div class="form-row"><p class="category">
-                     追加項目
+                    追加項目
                 </p>
                 </div>
                 <div class="form-row">
@@ -159,5 +165,5 @@ Form
 {% endblock %}
 
 {% block script%}
-    <script src="{{ url_for('static', filename='js/hiddenInput.js') }}"></script>
+<script src="{{ url_for('static', filename='js/hiddenInput.js') }}"></script>
 {% endblock %}

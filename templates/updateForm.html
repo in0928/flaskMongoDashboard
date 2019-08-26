@@ -12,24 +12,19 @@ Form
 <div class="col main pt-5 mt-3">
     <br>
 
-    <form class="form-basic" method="post" action="{{ url_for('update_people_form') }}">
-                    {% for task in person %}
-
+    <form class="form-basic" method="post" action="{{ url_for('update_form') }}">
+                    {% for attr in person %}
+	<input type="text" name="_id" value="{{ attr['_id'] }}" hidden>
         <div class="form-title-row">
             <h1>Update Existing Contact</h1>
         </div>
-        <div class="form-row list-selection"><label>追加先のリストを選択してください</label>
-            <div class="form-radio-buttons">
-                <label>
-                    <input type="radio" name="submit-to-list" value="people-list">
-                    <span>People List</span>
-                </label>
-                <label>
-                    <input type="radio" name="submit-to-list" value="ba-list">
-                    <span>BA List</span>
-                </label>
-            </div>
+        <div class="form-row list-selection"><label>BAリストに移動する</label>
+<!--TODO: Need to be implemented-->
         </div>
+        <div class="form-row form-header2">
+                            <label>Dashboardに表示する</label>
+                            <input type="checkbox" name="fav" checked>
+                        </div>
 
         <div class="row">
             <div class="col-sm-6">
@@ -38,12 +33,12 @@ Form
                 </div>
                 <div class="form-row">
                     <label>名前</label>
-                    <input type="text" name="full-name" value="{{ task['full-name'] }}">
+                    <input type="text" name="full-name" value="{{ attr['full-name'] }}">
                 </div>
 
                 <div class="form-row">
                     <label>年齢</label>
-                    <input type="text" name="age" placeholder="">
+                    <input type="text" name="age" value="{{ attr['age'] }}">
                 </div>
 
                 <div class="form-row">
@@ -86,7 +81,7 @@ Form
 
                 <div class="form-row">
                     <label>印象・メモ</label>
-                    <textarea name="description"></textarea>
+                    <textarea name="description">{{ attr['description'] }}</textarea>
                 </div>
 
                 <!--in case I need a checkbox-->
@@ -97,7 +92,7 @@ Form
 
                 <div class="form-row">
                     <label>ニーズ</label>
-                    <input type="text" name="needs">
+                    <input type="text" name="needs" value="{{ attr['needs'] }}">
                 </div>
                 <!--                   looks nicer with a new line when displayed on mobile-->
                 <div class="form-row"><br></div>
@@ -111,7 +106,7 @@ Form
                 </div>
                 <div class="form-row">
                     <label>性格</label>
-                    <input type="text" name="character">
+                    <input type="text" name="character" value="{{ attr['character'] }}">
                 </div>
                 <div class="form-row">
                     <label>親しさ</label>
@@ -125,36 +120,36 @@ Form
                 </div>
                 <div class="form-row">
                     <label>職業</label>
-                    <input type="text" name="job">
+                    <input type="text" name="job" value="{{ attr['job'] }}">
                 </div>
                 <div class="form-row">
                     <label>会社</label>
-                    <input type="text" name="company">
+                    <input type="text" name="company" value="{{ attr['company'] }}">
                 </div>
                 <div class="form-row">
                     <label>勤務地</label>
-                    <input type="text" name="company-loc">
+                    <input type="text" name="company-loc" value="{{ attr['company-loc'] }}">
                 </div>
                 <div class="form-row">
                     <label>住まい</label>
-                    <input type="text" name="home">
+                    <input type="text" name="home" value="{{ attr['home'] }}">
                 </div>
                 <div class="form-row">
                     <label>出身地</label>
-                    <input type="text" name="hometown">
+                    <input type="text" name="hometown" value="{{ attr['hometown'] }}">
                 </div>
                 <div class="form-row">
                     <label>きっかけ</label>
-                    <input type="text" name="source" placeholder="知り合ったきっかけ">
+                    <input type="text" name="source" value="{{ attr['source'] }}">
                 </div>
                 <div class="form-row">
                     <label>その他備考</label>
-                    <input type="text" name="remarks">
+                    <input type="text" name="remarks" value="{{ attr['remarks'] }}">
                 </div>
             </div>
         </div>
         <div class="form-row">
-            <button type="submit">保存</button>
+            <button type="submit">変更を保存</button>
         </div>
     </form>
                     {% endfor %}

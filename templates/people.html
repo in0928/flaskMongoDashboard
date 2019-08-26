@@ -9,6 +9,7 @@
         <thead class="thead-inverse">
                 <tr>
                     <th>名前</th>
+                    <th>Dashboard</th>
                     <th>年齢</th>
                     <th>性別</th>
                     <th>状態</th>
@@ -23,7 +24,6 @@
                     <th>出身地</th>
                     <th>向上心</th>
                     <th>きっかけ</th>
-                    <th style="display:none;">id</th>
                 </tr>
                 </thead>
 
@@ -31,6 +31,7 @@
                         {% for person in people_list %}
                 <tr>
                     <th class="freeze-col"><a href="./updatepeopleform?_id={{ person['_id'] }}">{{ person["full-name"] }}</a></th>
+                    <td>{{ person["favorite"] }}</td>
                     <td>{{ person["age"] }}</td>
                     <td>{{ person["gender"] }}</td>
                     <td>{{ person["status"] }}</td>
@@ -45,7 +46,6 @@
                     <td>{{ person["hometown"] }}</td>
                     <td>{{ person["ambition"] }}</td>
                     <td>{{ person["source"] }}</td>
-                    <td style="display:none;">{{ person['_id'] }}</td>
                 </tr>
                 {% endfor %}
 

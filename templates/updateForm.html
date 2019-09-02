@@ -19,12 +19,12 @@ Form
             <h1>Update Existing Contact</h1>
         </div>
         <div class="form-row list-selection"><label>BAリストに移動する</label>
-<!--TODO: Need to be implemented-->
+            <!--TODO: Need to be implemented-->
         </div>
         <div class="form-row form-header2">
-                            <label>Dashboardに表示する</label>
-                            <input type="checkbox" name="fav" checked>
-                        </div>
+            <label>Dashboardに表示する</label>
+            <input type="checkbox" name="fav" checked>
+        </div>
 
         <div class="row">
             <div class="col-sm-6">
@@ -43,7 +43,7 @@ Form
 
                 <div class="form-row">
                     <label>性別</label>
-                    <div class="form-radio-buttons">
+                    <div class="form-radio-buttons" name="{{ attr['gender'] }}">
                         <label>
                             <input type="radio" name="gender" value="male">
                             <span>男</span>
@@ -62,21 +62,22 @@ Form
 
                 <div class="form-row">
                     <label>状態</label>
-                    <select name="status" id="status-dropdown" onchange="otherCheck(this)">
+                    <select name="status" id="status-dropdown" onchange="otherCheck(this)" class="{{ attr['status'] }}">
                         <option>会ったばかり</option>
                         <option>知人</option>
                         <option>友人</option>
                         <option>BPR済み</option>
                         <option>SPR済み</option>
                         <option>RP済み</option>
-                        <option>Placeholder1</option>
-                        <option>Placeholder2</option>
+                        <option>トレーニング中</option>
+                        <option>様子見</option>
+                        <option>ロスト</option>
                         <option value="others" id="status-others">その他</option>
                     </select>
                 </div>
                 <div class="form-row" id="input-status">
                     <label>状態を入力</label>
-                    <input type="text" name="status">
+                    <input type="text" name="other-status" >
                 </div>
 
                 <div class="form-row">
@@ -159,5 +160,6 @@ Form
 {% endblock %}
 
 {% block script%}
-    <script src="{{ url_for('static', filename='js/hiddenInput.js') }}"></script>
+<script src="{{ url_for('static', filename='js/updateForm.js') }}"></script>
+<script src="{{ url_for('static', filename='js/hiddenInput.js') }}"></script>
 {% endblock %}

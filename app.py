@@ -37,7 +37,6 @@ def home():
     return render_template("home.html", people_list=people_list, ba_list=ba_list,\
                            fav_people_list=fav_people_list, fav_ba_list=fav_ba_list, fav_notes_list=fav_notes_list, t=t)
 
-
 @app.route("/form")
 def form():
     return render_template("form.html")
@@ -159,7 +158,7 @@ def submitted():
 def schedule():
     t = "Monthly Schudule Scrapped from COM"
 
-    month_date = ["8."]*31
+    month_date = ["9."]*31
     for i in range(31):
         date = str(i+1)
         month_date[i] = month_date[i]+date

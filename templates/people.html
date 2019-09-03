@@ -34,7 +34,11 @@
                     <td>{{ person["favorite"] }}</td>
                     <td>{{ person["age"] }}</td>
                     <td>{{ person["gender"] }}</td>
-                    <td>{{ person["status"] }}</td>
+                    {% if person["status"] == "others" %}
+                        <td>{{ person["other-status"] }}</td>
+                    {% else %}
+                        <td>{{ person["status"] }}</td>
+                    {% endif %}
                     <td class="wide-col">{{ person["description"] }}</td>
                     <td>{{ person["tag"] }}</td>
                     <td>{{ person["character"] }}</td>

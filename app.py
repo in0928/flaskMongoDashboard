@@ -21,10 +21,6 @@ my_dlines_data = connector.my_dlines
 users_data = connector.users
 notes_data = connector.notes
 
-@app.route("/confirm")
-def favorite():
-    print("123333")
-    return redirect("/")
 
 @app.route("/")
 def home():

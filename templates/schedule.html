@@ -6,9 +6,6 @@
 
 {% block table %}
     <form class="form-basic" action="" method="post">
-        <div class="form-row">
-            <button type="submit">予定表に追加</button>
-        </div>
             <div class="col-lg-9 col-md-8" style="max-width:100%;">
         <div class="table-responsive">
     <table class="table table-striped" id="com-schedule">
@@ -28,7 +25,7 @@
     {% for entry in event_list %}
     {%- if entry["content"] != ""%}
     <tr>
-        <td id="going"><input type="checkbox"></td>
+        <td id="going"><button type="submit">Going</button></td>
         <td>{{ entry["date"] }}</td>
         <td>{{ entry["union_name"] }}</td>
         <td>{{ entry["content"] }}</td>

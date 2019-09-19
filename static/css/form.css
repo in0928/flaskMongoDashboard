@@ -14,7 +14,6 @@ div.form-radio-buttons > label {
     display: inline-block;
     box-sizing: border-box;
     color: #5F5F5F;
-    width: 180px;
     text-align: right;
     vertical-align: top;
     padding: 12px 40px 12px 8px;
@@ -34,6 +33,18 @@ div.form-radio-buttons > label {
 
     font: bold 14px sans-serif;
     text-align: center;
+}
+
+.form-basic .form-row .form-checkboxes {
+    display: inline-block;
+    width: 50%;
+}
+
+.form-basic .form-row label.item {
+    display: inline-block;
+    padding: 10px;
+    text-align:left;
+    width: auto;
 }
 
 .form-basic .form-row{
@@ -124,7 +135,7 @@ div.form-radio-buttons > label {
     margin-top: 10px;
 }
 
-.form-basic .form-radio-buttons label span{
+.form-basic .form-radio-buttons label span, label.item{
     margin-left: 2px;
     color: #5f5f5f;
     font-weight: normal;
@@ -188,9 +199,10 @@ p.category{
     font-size: 16px;
 }
 
-.form-basic input[type=checkbox]{
+/*.form-basic input[type=checkbox]{
         margin: auto auto auto 100px;
     }
+*/
 
 /*
 .switch {

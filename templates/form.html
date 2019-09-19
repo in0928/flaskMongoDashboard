@@ -29,34 +29,34 @@ Form
             </div>
 
         </div>
-<div class="form-row form-header2">
-                            <label>Dashboardに表示する</label>
-                            <input type="checkbox" name="fav" checked>
-                        </div>
+        <div class="form-row form-header2">
+            <label>Dashboardに表示する</label>
+            <input type="checkbox" name="fav" checked style="margin: auto auto auto 100px;">
+        </div>
 
-<!--        <div>-->
-<!--                <label class="switch">-->
-<!--                    <input type="checkbox" checked>-->
-<!--                    <span class="slider round"></span>-->
-<!--                </label>-->
-<!--            </div>-->
+        <!--        <div>-->
+        <!--                <label class="switch">-->
+        <!--                    <input type="checkbox" checked>-->
+        <!--                    <span class="slider round"></span>-->
+        <!--                </label>-->
+        <!--            </div>-->
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-row">
                     <p class="category"> 基本項目 </p>
                 </div>
                 <div class="form-row">
-                    <label>名前</label>
+                    <label class="entry">名前</label>
                     <input type="text" name="full-name">
                 </div>
 
                 <div class="form-row">
-                    <label>年齢</label>
+                    <label class="entry">年齢</label>
                     <input type="text" name="age">
                 </div>
 
                 <div class="form-row">
-                    <label>性別</label>
+                    <label class="entry">性別</label>
                     <div class="form-radio-buttons">
                         <label>
                             <input type="radio" name="gender" value="male">
@@ -74,7 +74,7 @@ Form
                 </div>
 
                 <div class="form-row">
-                    <label>状態</label>
+                    <label class="entry">状態</label>
                     <select name="status" id="status-dropdown" onchange="otherCheck(this)">
                         <option>会ったばかり</option>
                         <option>知人</option>
@@ -82,23 +82,28 @@ Form
                         <option>BPR済み</option>
                         <option>SPR済み</option>
                         <option>RP済み</option>
-                        <option>Placeholder1</option>
-                        <option>Placeholder2</option>
                         <option value="others" id="status-others">その他</option>
                     </select>
                 </div>
                 <div class="form-row" id="input-status">
-                    <label>状態を入力</label>
+                    <label class="entry">状態を入力</label>
                     <input type="text" name="other-status">
                 </div>
 
                 <div class="form-row">
-                    <label>印象・メモ</label>
+                    <label class="entry">印象・メモ</label>
                     <textarea name="description"></textarea>
                 </div>
-
                 <div class="form-row">
-                    <label>ニーズ</label>
+                    <label class="entry">関係性</label>
+                    <select name="relation">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label class="entry">ニーズ</label>
                     <input type="text" name="needs">
                 </div>
                 <!--                   looks nicer with a new line when displayed on mobile-->
@@ -112,47 +117,53 @@ Form
                 </p>
                 </div>
                 <div class="form-row">
-                    <label>タイプ</label>
-                    <input id="promoter" type="checkbox" name="type" value="promoter"><label for="promoter">Promoter</label>
-                    <input id="controller" type="checkbox" name="type" value="promoter"><label for="controller">Controller</label>
+                    <label class="entry">タイプ</label>
+                    <div class="form-checkboxes">
+                        <div class="single-item">
+                            <input id="promoter" type="checkbox" name="type" value="promoter"><label for="promoter"
+                                                                                                     class="item">プロモーター</label>
+                        </div>
+                        <div class="single-item">
+                            <input id="analyzer" type="checkbox" name="type" value="analyzer"><label for="analyzer"
+                                                                                                     class="item">アナライザー</label>
+                        </div>
+                        <div class="single-item">
+                            <input id="controller" type="checkbox" name="type" value="controller"><label
+                                for="controller" class="item">コントローラー</label>
+                        </div>
+                        <div class="single-item">
+                            <input id="supporter" type="checkbox" name="type" value="supporter"><label for="supporter"
+                                                                                                       class="item">サポーター</label>
+                        </div>
+                    </div>
+                </div>
 
-                </div>
                 <div class="form-row">
-                    <label>親しさ</label>
-                    <select name="relation">
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label>職業</label>
+                    <label class="entry">職業</label>
                     <input type="text" name="job">
                 </div>
                 <div class="form-row">
-                    <label>会社</label>
+                    <label class="entry">会社</label>
                     <input type="text" name="company">
                 </div>
                 <div class="form-row">
-                    <label>勤務地</label>
+                    <label class="entry">勤務地</label>
                     <input type="text" name="company-loc">
                 </div>
                 <div class="form-row">
-                    <label>住まい</label>
+                    <label class="entry">住まい</label>
                     <input type="text" name="home">
                 </div>
                 <div class="form-row">
-                    <label>出身地</label>
+                    <label class="entry">出身地</label>
                     <input type="text" name="hometown">
                 </div>
                 <div class="form-row">
-                    <label>きっかけ</label>
+                    <label class="entry">きっかけ</label>
                     <input type="text" name="source" placeholder="知り合ったきっかけ">
                 </div>
                 <div class="form-row">
-                    <label>その他備考</label>
+                    <label class="entry">その他備考</label>
                     <input type="text" name="remarks">
                 </div>
             </div>

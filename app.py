@@ -54,7 +54,7 @@ def update_form():
     other_status = request.form.get("other-status")
     description = request.form.get("description")
     needs = request.form.get("needs")
-    character = request.form.get("character")
+    type = request.form.get("type")
     relation = request.form.get("relation")
     job = request.form.get("job")
     company = request.form.get("company")
@@ -78,7 +78,7 @@ def update_form():
                                         "other-status": other_status,
                                         "description": description,
                                         "needs": needs,
-                                        "character": character,
+                                        "type": type,
                                         "relation": relation,
                                         "job": job,
                                         "company": company,
@@ -104,7 +104,7 @@ def submit_form():
     other_status = request.form.get("other-status")
     description = request.form.get("description")
     needs = request.form.get("needs")
-    character = request.form.get("character")
+    type = request.form.getlist("type")
     relation = request.form.get("relation")
     job = request.form.get("job")
     company = request.form.get("company")
@@ -132,7 +132,7 @@ def submit_form():
         "other-status": other_status,
         "description": description,
         "needs": needs,
-        "character": character,
+        "type": type,
         "relation": relation,
         "job": job,
         "company": company,

@@ -1,0 +1,61 @@
+{% extends "common.html" %}
+
+{% block title%}
+Form
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/form.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="col main pt-5 mt-3">
+    <br>
+    <form class="form-basic" method="post" action="{{ url_for('submit_note_form') }}">
+
+        <div class="form-title-row">
+            <h1>New Note</h1>
+        </div>
+
+        <div class="form-row form-header2">
+            <label>Dashboardに表示する</label>
+            <input type="checkbox" name="fav" checked style="margin: auto auto auto 100px;">
+        </div>
+
+        <!--        <div>-->
+        <!--                <label class="switch">-->
+        <!--                    <input type="checkbox" checked>-->
+        <!--                    <span class="slider round"></span>-->
+        <!--                </label>-->
+        <!--            </div>-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-row">
+                    <label class="entry">タイトル</label>
+                    <input type="text" name="title">
+                </div>
+
+                <div class="form-row">
+                    <label class="entry">対象</label>
+                    <input type="text" name="target">
+                </div>
+                <div class="form-row">
+                    <label class="entry">内容</label>
+                    <textarea name="content"></textarea>
+                </div>
+                <div class="form-row"><br></div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <button type="submit">保存</button>
+        </div>
+    </form>
+
+
+</div><!--/col-->
+{% endblock %}
+
+{% block script%}
+<script src="{{ url_for('static', filename='js/hiddenInput.js') }}"></script>
+{% endblock %}

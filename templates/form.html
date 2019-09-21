@@ -74,22 +74,22 @@ Form
                 </div>
 
                 <div class="form-row">
-                    <label class="entry">状態</label>
+                    <label class="entry">ステータス</label>
                     <select name="status" id="status-dropdown" onchange="otherCheck(this)">
-                        <option>会ったばかり</option>
-                        <option>知人</option>
-                        <option>友人</option>
-                        <option>BPR済み</option>
-                        <option>SPR済み</option>
-                        <option>RP済み</option>
-                        <option value="others" id="status-others">その他</option>
+                        <option>NA</option>
+                        <option>BA</option>
+                        <option>研修中</option>
+                        <option value="lost-reason" id="lost-reason">ロスト</option>
                     </select>
                 </div>
                 <div class="form-row" id="input-status">
-                    <label class="entry">状態を入力</label>
-                    <input type="text" name="other-status">
+                    <label class="entry">ロスト理由を入力</label>
+                    <input type="text" name="lost-reason">
                 </div>
-
+                <div class="form-row">
+                    <label class="entry">興味付けポイント</label>
+                    <input type="text" name="my-value-proposition">
+                </div>
                 <div class="form-row">
                     <label class="entry">印象・メモ</label>
                     <textarea name="description"></textarea>
@@ -107,8 +107,11 @@ Form
                     <input type="text" name="needs">
                 </div>
                 <!--                   looks nicer with a new line when displayed on mobile-->
+                <div class="form-row">
+                    <label class="entry">その他経歴</label>
+                    <textarea name="other-background"></textarea>
+                </div>
                 <div class="form-row"><br></div>
-
 
             </div>
             <div class="col-sm-6">
@@ -161,6 +164,10 @@ Form
                 <div class="form-row">
                     <label class="entry">きっかけ</label>
                     <input type="text" name="source" placeholder="知り合ったきっかけ">
+                </div>
+                <div class="form-row">
+                    <label class="entry">誕生日</label>
+                    <input type="text" name="dob" placeholder="数字のみで記入　例：19920928">
                 </div>
                 <div class="form-row">
                     <label class="entry">その他備考</label>

@@ -101,9 +101,11 @@ def submit_form():
     age = request.form.get("age")
     gender = request.form.get("gender")
     status = request.form.get("status")
-    other_status = request.form.get("other-status")
+    lost_reason = request.form.get("lost-reason")
+    my_value_proposition = request.form.get("my-value-proposition")
     description = request.form.get("description")
     needs = request.form.get("needs")
+    other_background = request.form.get("other-background")
     type = request.form.getlist("type")
     relation = request.form.get("relation")
     job = request.form.get("job")
@@ -112,6 +114,7 @@ def submit_form():
     home = request.form.get("home")
     hometown = request.form.get("hometown")
     source = request.form.get("source")
+    dob = request.form.get("dob")
     remarks = request.form.get("remarks")
     fav = request.form.get("fav")
     if fav:
@@ -129,9 +132,11 @@ def submit_form():
         "age": age,
         "gender": gender,
         "status": status,
-        "other-status": other_status,
+        "lost-reason": lost_reason,
+        "my-value-proposition": my_value_proposition,
         "description": description,
         "needs": needs,
+        "other-background": other_background,
         "type": type,
         "relation": relation,
         "job": job,
@@ -140,6 +145,7 @@ def submit_form():
         "home": home,
         "hometown": hometown,
         "source": source,
+        "dob": dob,
         "remarks": remarks,
         "last-updated": datetime.now()
     })
@@ -149,6 +155,31 @@ def submit_form():
 @app.route("/submitted")
 def submitted():
     return render_template("submitted.html")
+
+@app.route("/note_from")
+def note_form():
+    return render_template("noteForm.html")
+
+@app.route("/submit_note_form", methods=["POST"])
+def submit_note_form():
+    title = request.form.get("title")
+    target = request.form.get("target")
+    content = request.form.get("content")
+    fav = request.form.get("fav")
+    if fav:
+        favorite = True
+    else:
+        favorite = False
+    cursor = notes_data
+    cursor.insert_one({
+        "favorite": favorite,
+        "title": title,
+        "target": target,
+        "content": content,
+        "last-updated": datetime.now()
+                      })
+    return redirect("/submitted")
+
 
 @app.route("/schedule")
 def schedule():

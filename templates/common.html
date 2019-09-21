@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
-    <meta name="description" content="A Bootstrap 4 admin dashboard theme that will get you started. The sidebar toggles off-canvas on smaller screens. This example also include large stat blocks, modal and cards. The top navbar is controlled by a separate hamburger toggle button." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Codeply">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -74,9 +72,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#something-new" data-toggle="collapse" data-target="#something-new">Something New▾</a>
                     <ul class="list-unstyled flex-column pl-3 collapse" id="something-new" aria-expanded="false">
-                       <li class="nav-item"><a class="nav-link" href="{{ url_for('form') }}">新しい人と出会った</a></li>
+                       <li class="nav-item"><a class="nav-link" href="{{ url_for('form') }}">人を追加</a></li>
                        <li class="nav-item"><a class="nav-link" href="{{ url_for('ba') }}">やりたいことが増えた</a></li>
-                       <li class="nav-item"><a class="nav-link" href="">新しい場所へ行った</a></li>
+                       <li class="nav-item"><a class="nav-link" href="{{ url_for('note_form') }}">ノートを追加</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="">Notes</a></li>

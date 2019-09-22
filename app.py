@@ -185,7 +185,7 @@ def submit_note_form():
 def schedule():
     t = "Monthly Schudule Scrapped from COM"
 
-    month_date = ["9."]*31
+    month_date = ["10."]*31
     for i in range(31):
         date = str(i+1)
         month_date[i] = month_date[i]+date
